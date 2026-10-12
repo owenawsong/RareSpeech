@@ -50,6 +50,7 @@ git clone https://github.com/owenawsong/RareSpeech.git
 cd RareSpeech
 python -m pip install -e .
 rarespeech validate
+python scripts/build_site.py
 rarespeech serve site
 ```
 
