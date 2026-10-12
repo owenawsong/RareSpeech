@@ -1,0 +1,50 @@
+{
+  "schema": "rarespeech.asr-audit.v1",
+  "left": "4fd94eff493cdc4546c448cacc1d33bf44be3d79a9f0451e014545bf1863d23c",
+  "right": "b6136451ee220fdb89dafa2ca8c371f0dc5d047ee207dd1d91bd8611fc2def58",
+  "disagreements": [
+    {
+      "sample_id": "botany.01.extended--r1",
+      "target_id": "t4",
+      "text": "phyllotaxis",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "manuscripts.01.extended--r1",
+      "target_id": "t2",
+      "text": "quaternion",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "linguistics.01.dense--r1",
+      "target_id": "t1",
+      "text": "haplology",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "zoology.01.dense--r1",
+      "target_id": "t3",
+      "text": "lophophore",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "zoology.01.extended--r1",
+      "target_id": "t4",
+      "text": "lophophore",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.dense--r1",
+      "target_id": "t3",
+      "text": "isorhythm",
+      "left_retained": false,
+      "right_retained": true
+    }
+  ],
+  "note": "Recognizer disagreement; neither side establishes correct pronunciation."
+}

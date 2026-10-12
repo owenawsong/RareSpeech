@@ -1,0 +1,8 @@
+{
+  "type": "python",
+  "factory": "examples.model_adapters:piper",
+  "model": "piper",
+  "revision": "replace-with-model-file-sha256",
+  "seed_supported": false,
+  "options": {"model_path": "path/to/en_US-danny-low.onnx"}
+}

@@ -1,0 +1,7 @@
+{
+  "type": "openai-speech",
+  "url": "http://127.0.0.1:8880/v1/audio/speech",
+  "model": "kokoro",
+  "voice": "af_heart",
+  "timeout": 180
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="490" viewBox="0 0 1280 490" role="img" aria-labelledby="title desc">
+<title id="title">RareSpeech — The hard words are the whole point.</title><desc id="desc">An editorial diagram showing rare specialist terms. Illustrative, not measured results.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#212922}.mono{font-family:Consolas,monospace;letter-spacing:1.8px}.serif{font-family:Georgia,serif}.pulse{animation:pulse 3s ease-in-out infinite alternate}@keyframes pulse{to{opacity:.45}}@media(prefers-reduced-motion:reduce){.pulse{animation:none}}</style>
+<rect width="1280" height="490" rx="8" fill="#f4f1e9"/>
+<text x="48" y="53" font-size="25" font-weight="700">r<tspan fill="#b94926">·</tspan>s</text><text x="101" y="53" font-size="20" font-weight="700">RareSpeech</text>
+<text x="1240" y="50" text-anchor="end" font-size="11" class="mono">RARE-CONTENT TTS EVALUATION / 01</text>
+<path d="M48 78H1232" stroke="#cbd0c3"/>
+<text x="48" y="129" font-size="11" class="mono">BEYOND FAMILIAR WORDS</text>
+<text x="44" y="208" font-size="66" class="serif">The hard words</text><text x="44" y="280" font-size="66" class="serif" fill="#b94926">are the whole point.</text>
+<text x="48" y="329" font-size="18">Test the long tail. Inspect what gets lost.</text>
+<text x="48" y="398" font-size="12" class="mono">GENERATE → ALIGN → LISTEN → REVIEW</text>
+<path d="M751 116V407" stroke="#cbd0c3"/>
+<text x="796" y="132" font-size="11" class="mono">SPECIMENS / SPECIALIST TERMINOLOGY</text>
+<text x="796" y="193" font-size="35" class="serif">omphacite</text><text x="796" y="244" font-size="35" class="serif">opisthograph</text><text x="796" y="295" font-size="35" class="serif">sesquialtera</text>
+<path d="M797 328V341M807 319V350M817 310V359M827 323V346M837 303V366M847 315V354M857 324V345M867 313V356M877 300V369M887 318V351M897 325V344M907 306V363M917 317V352M927 322V347M937 310V359M947 316V353M957 325V344M967 301V368M977 315V354M987 321V348M997 309V360M1007 318V351M1017 327V342M1027 311V358M1037 303V366M1047 317V352M1057 326V343M1067 310V359M1077 319V350M1087 324V345M1097 313V356M1107 306V363M1117 317V352M1127 325V344M1137 309V360M1147 319V350M1157 326V343M1167 313V356M1177 304V365M1187 317V352M1197 325V344" stroke="#2b614a" stroke-width="4" class="pulse"/>
+<text x="796" y="398" font-size="11" class="mono">ILLUSTRATION · EVERY RESULT LINKS TO EVIDENCE</text>
+<path d="M48 431H1232" stroke="#cbd0c3"/><text x="48" y="461" font-size="11" class="mono">OPEN TOOLKIT · AUTHORED CHALLENGES · OFFLINE REPORTS</text><text x="1232" y="461" text-anchor="end" font-size="11" class="mono">BY OWEN SONG</text>
+</svg>

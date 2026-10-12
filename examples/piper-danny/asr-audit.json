@@ -1,0 +1,92 @@
+{
+  "schema": "rarespeech.asr-audit.v1",
+  "left": "bca76ab8004cf557daae4ae73391f5abdb1cf4691cbc5c6588062c1d7b531274",
+  "right": "854dc69be4d6fc557d1241b39799d1a10fc66a47056875f8ec56648a370207ec",
+  "disagreements": [
+    {
+      "sample_id": "mineralogy.01.extended--r1",
+      "target_id": "t1",
+      "text": "omphacite",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "mineralogy.01.extended--r1",
+      "target_id": "t3",
+      "text": "omphacite",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "botany.01.extended--r1",
+      "target_id": "t5",
+      "text": "anemophily",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "linguistics.01.isolated--r1",
+      "target_id": "t1",
+      "text": "haplology",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "linguistics.01.dense--r1",
+      "target_id": "t1",
+      "text": "haplology",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "linguistics.01.extended--r1",
+      "target_id": "t3",
+      "text": "haplology",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "astronomy.01.extended--r1",
+      "target_id": "t4",
+      "text": "anomalistic",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "mathematics.01.isolated--r1",
+      "target_id": "t1",
+      "text": "homeomorphism",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.isolated--r1",
+      "target_id": "t1",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.dense--r1",
+      "target_id": "t1",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.extended--r1",
+      "target_id": "t1",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.extended--r1",
+      "target_id": "t3",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    }
+  ],
+  "note": "Recognizer disagreement; neither side establishes correct pronunciation."
+}

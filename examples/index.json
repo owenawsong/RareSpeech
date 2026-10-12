@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "inflect-nano",
+    "url": "examples/inflect-nano/index.html",
+    "name": "Inflect Nano v2",
+    "description": "Author-maintained model; CPU, 32-case integration pilot.",
+    "label": "Measured pilot · Whisper small.en"
+  },
+  {
+    "slug": "inflect-micro",
+    "url": "examples/inflect-micro/index.html",
+    "name": "Inflect Micro v2",
+    "description": "Author-maintained model; CPU, 32-case integration pilot.",
+    "label": "Measured pilot · Whisper small.en"
+  },
+  {
+    "slug": "piper-danny",
+    "url": "examples/piper-danny/index.html",
+    "name": "Piper · Danny low",
+    "description": "Separate TTS pipeline; CPU, 32-case integration pilot.",
+    "label": "Measured pilot · Whisper small.en"
+  }
+]

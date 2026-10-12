@@ -1,0 +1,17 @@
+RareSpeech code/interface: MIT, Copyright 2026 Owen Song.
+Original challenge text/annotations: CC BY-SA 4.0 (data/LICENSE).
+
+Frequency metadata is produced with wordfreq 3.1.1, Robyn Speer and contributors,
+https://github.com/rspeer/wordfreq . wordfreq code is Apache 2.0; distributed
+data is CC BY-SA 4.0 with source attributions described by its project. The small
+per-term estimates in this project identify provider and version. We do not
+redistribute its frequency databases.
+
+Model integrations use separately installed packages and downloaded model
+weights. Their licenses apply independently. Inflect v2 weights/code are
+Apache 2.0; Piper software/voice licensing must be checked per distribution
+and voice. Example generated audio is accompanied by provenance; no human
+reference recording or cloned speaker is included in the pilots.
+
+The reports include original illustrative waveform graphics and measured
+audio-envelope graphics; illustrative visuals are labeled as such.

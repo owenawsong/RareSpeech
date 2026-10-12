@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use RareSpeech, cite this software and record the corpus hash."
+title: "RareSpeech: Rare-content fidelity diagnostics for text-to-speech"
+type: software
+version: 0.1.0
+date-released: 2026-10-11
+authors:
+  - family-names: Song
+    given-names: Owen
+repository-code: https://github.com/owenawsong/RareSpeech
+license: MIT
+abstract: "A reproducible toolkit and candidate challenge collection for inspecting content retention on uncommon specialist text. Automatic metrics are ASR proxies; human-reviewed judgments are recorded separately."

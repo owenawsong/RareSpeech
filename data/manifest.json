@@ -1,0 +1,69 @@
+{
+  "schema": "rarespeech.corpus.v1",
+  "version": "0.1.0",
+  "status": "authored candidate collection; no expert pronunciation validation yet",
+  "license": "CC-BY-SA-4.0",
+  "cases": 320,
+  "families": 64,
+  "categories": [
+    {
+      "id": "mineralogy",
+      "label": "Mineralogy",
+      "description": "Minerals, textures & formations",
+      "families": 8
+    },
+    {
+      "id": "botany",
+      "label": "Botany",
+      "description": "Structures & specialist descriptions",
+      "families": 8
+    },
+    {
+      "id": "manuscripts",
+      "label": "Manuscript studies",
+      "description": "Books, inscriptions & letterforms",
+      "families": 8
+    },
+    {
+      "id": "linguistics",
+      "label": "Linguistics",
+      "description": "Sounds & grammatical structures",
+      "families": 8
+    },
+    {
+      "id": "zoology",
+      "label": "Zoology",
+      "description": "Anatomy & uncommon descriptors",
+      "families": 8
+    },
+    {
+      "id": "astronomy",
+      "label": "Astronomy",
+      "description": "Orbits & celestial mechanics",
+      "families": 8
+    },
+    {
+      "id": "mathematics",
+      "label": "Mathematics",
+      "description": "Structures & specialist vocabulary",
+      "families": 8
+    },
+    {
+      "id": "musicology",
+      "label": "Musicology",
+      "description": "Forms, ornaments & notation",
+      "families": 8
+    }
+  ],
+  "corpus_hash": "2dfb96a8ffdf8e0a658ab53b2b27a63429ae87f0aba3ef81fcc2e101ba32137f",
+  "rarity": "wordfreq 3.1.1, large English list; Zipf 0 is below coverage, not proof of zero occurrence",
+  "controls": "Identical familiar carrier controls diagnose recognizer/pipeline behavior. They are not length-matched causal controls and are excluded from the main proxy.",
+  "known_limitations": [
+    "Carrier templates repeat across domains",
+    "General written frequency does not establish spoken rarity",
+    "Below-coverage terms need specialist source review",
+    "Some terms are familiar within their disciplines",
+    "Pronunciation judgments require qualified raters",
+    "No training-exposure claim"
+  ]
+}

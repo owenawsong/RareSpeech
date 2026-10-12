@@ -1,0 +1,8 @@
+{
+  "type": "python",
+  "factory": "examples.model_adapters:inflect",
+  "model": "Inflect-Nano-v2",
+  "revision": "replace-with-the-downloaded-Hugging-Face-commit",
+  "seed_supported": true,
+  "options": {"model_dir": "path/to/Inflect-Nano-v2", "device": "cpu", "threads": 2}
+}

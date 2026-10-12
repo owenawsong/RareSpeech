@@ -1,0 +1,8 @@
+{
+  "type": "python",
+  "factory": "examples.model_adapters:kokoro",
+  "model": "hexgrad/Kokoro-82M",
+  "revision": "record-the-downloaded-revision",
+  "seed_supported": true,
+  "options": {"voice": "af_heart", "language": "a", "threads": 2}
+}

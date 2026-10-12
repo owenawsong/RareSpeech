@@ -1,0 +1,1490 @@
+[
+  {
+    "id": "mineralogy.01.isolated",
+    "family_id": "mineralogy.01",
+    "category": "mineralogy",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names omphacite. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "omphacite",
+        "start": 16,
+        "end": 25,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/omphacite"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mineralogy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mineralogy.01.dense",
+    "family_id": "mineralogy.01",
+    "category": "mineralogy",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists omphacite, aegirine, and clinozoisite. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "omphacite",
+        "start": 27,
+        "end": 36,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/omphacite"
+      },
+      {
+        "id": "t2",
+        "text": "aegirine",
+        "start": 38,
+        "end": 46,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/aegirine"
+      },
+      {
+        "id": "t3",
+        "text": "clinozoisite",
+        "start": 52,
+        "end": 64,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/clinozoisite"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mineralogy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mineralogy.01.extended",
+    "family_id": "mineralogy.01",
+    "category": "mineralogy",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is omphacite. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading aegirine. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to omphacite, and a printed note refers to clinozoisite. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: omphacite. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "omphacite",
+        "start": 64,
+        "end": 73,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/omphacite"
+      },
+      {
+        "id": "t2",
+        "text": "aegirine",
+        "start": 200,
+        "end": 208,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/aegirine"
+      },
+      {
+        "id": "t3",
+        "text": "omphacite",
+        "start": 366,
+        "end": 375,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/omphacite"
+      },
+      {
+        "id": "t4",
+        "text": "clinozoisite",
+        "start": 406,
+        "end": 418,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/clinozoisite"
+      },
+      {
+        "id": "t5",
+        "text": "omphacite",
+        "start": 559,
+        "end": 568,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/omphacite"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mineralogy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mineralogy.01.control",
+    "family_id": "mineralogy.01",
+    "category": "mineralogy",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mineralogy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "botany.01.isolated",
+    "family_id": "botany.01",
+    "category": "botany",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names anemophily. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "anemophily",
+        "start": 16,
+        "end": 26,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anemophily"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "botany.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "botany.01.dense",
+    "family_id": "botany.01",
+    "category": "botany",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists anemophily, cleistogamy, and phyllotaxis. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "anemophily",
+        "start": 27,
+        "end": 37,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anemophily"
+      },
+      {
+        "id": "t2",
+        "text": "cleistogamy",
+        "start": 39,
+        "end": 50,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/cleistogamy"
+      },
+      {
+        "id": "t3",
+        "text": "phyllotaxis",
+        "start": 56,
+        "end": 67,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/phyllotaxis"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "botany.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "botany.01.extended",
+    "family_id": "botany.01",
+    "category": "botany",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is anemophily. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading cleistogamy. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to anemophily, and a printed note refers to phyllotaxis. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: anemophily. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "anemophily",
+        "start": 64,
+        "end": 74,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anemophily"
+      },
+      {
+        "id": "t2",
+        "text": "cleistogamy",
+        "start": 201,
+        "end": 212,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/cleistogamy"
+      },
+      {
+        "id": "t3",
+        "text": "anemophily",
+        "start": 370,
+        "end": 380,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anemophily"
+      },
+      {
+        "id": "t4",
+        "text": "phyllotaxis",
+        "start": 411,
+        "end": 422,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/phyllotaxis"
+      },
+      {
+        "id": "t5",
+        "text": "anemophily",
+        "start": 563,
+        "end": 573,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anemophily"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "botany.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "botany.01.control",
+    "family_id": "botany.01",
+    "category": "botany",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "botany.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "manuscripts.01.isolated",
+    "family_id": "manuscripts.01",
+    "category": "manuscripts",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names opisthograph. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "opisthograph",
+        "start": 16,
+        "end": 28,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthograph"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "manuscripts.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "manuscripts.01.dense",
+    "family_id": "manuscripts.01",
+    "category": "manuscripts",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists opisthograph, quaternion, and bifolium. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "opisthograph",
+        "start": 27,
+        "end": 39,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthograph"
+      },
+      {
+        "id": "t2",
+        "text": "quaternion",
+        "start": 41,
+        "end": 51,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/quaternion"
+      },
+      {
+        "id": "t3",
+        "text": "bifolium",
+        "start": 57,
+        "end": 65,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/bifolium"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "manuscripts.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "manuscripts.01.extended",
+    "family_id": "manuscripts.01",
+    "category": "manuscripts",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is opisthograph. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading quaternion. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to opisthograph, and a printed note refers to bifolium. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: opisthograph. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "opisthograph",
+        "start": 64,
+        "end": 76,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthograph"
+      },
+      {
+        "id": "t2",
+        "text": "quaternion",
+        "start": 203,
+        "end": 213,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/quaternion"
+      },
+      {
+        "id": "t3",
+        "text": "opisthograph",
+        "start": 371,
+        "end": 383,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthograph"
+      },
+      {
+        "id": "t4",
+        "text": "bifolium",
+        "start": 414,
+        "end": 422,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/bifolium"
+      },
+      {
+        "id": "t5",
+        "text": "opisthograph",
+        "start": 563,
+        "end": 575,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthograph"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "manuscripts.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "manuscripts.01.control",
+    "family_id": "manuscripts.01",
+    "category": "manuscripts",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "manuscripts.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "linguistics.01.isolated",
+    "family_id": "linguistics.01",
+    "category": "linguistics",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names haplology. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "haplology",
+        "start": 16,
+        "end": 25,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/haplology"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "linguistics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "linguistics.01.dense",
+    "family_id": "linguistics.01",
+    "category": "linguistics",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists haplology, anaptyxis, and epenthesis. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "haplology",
+        "start": 27,
+        "end": 36,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/haplology"
+      },
+      {
+        "id": "t2",
+        "text": "anaptyxis",
+        "start": 38,
+        "end": 47,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anaptyxis"
+      },
+      {
+        "id": "t3",
+        "text": "epenthesis",
+        "start": 53,
+        "end": 63,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/epenthesis"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "linguistics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "linguistics.01.extended",
+    "family_id": "linguistics.01",
+    "category": "linguistics",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is haplology. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading anaptyxis. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to haplology, and a printed note refers to epenthesis. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: haplology. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "haplology",
+        "start": 64,
+        "end": 73,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/haplology"
+      },
+      {
+        "id": "t2",
+        "text": "anaptyxis",
+        "start": 200,
+        "end": 209,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anaptyxis"
+      },
+      {
+        "id": "t3",
+        "text": "haplology",
+        "start": 367,
+        "end": 376,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/haplology"
+      },
+      {
+        "id": "t4",
+        "text": "epenthesis",
+        "start": 407,
+        "end": 417,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/epenthesis"
+      },
+      {
+        "id": "t5",
+        "text": "haplology",
+        "start": 558,
+        "end": 567,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/haplology"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "linguistics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "linguistics.01.control",
+    "family_id": "linguistics.01",
+    "category": "linguistics",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "linguistics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "zoology.01.isolated",
+    "family_id": "zoology.01",
+    "category": "zoology",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names opisthobranch. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "opisthobranch",
+        "start": 16,
+        "end": 29,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthobranch"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "zoology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "zoology.01.dense",
+    "family_id": "zoology.01",
+    "category": "zoology",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists opisthobranch, chaetognath, and lophophore. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "opisthobranch",
+        "start": 27,
+        "end": 40,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthobranch"
+      },
+      {
+        "id": "t2",
+        "text": "chaetognath",
+        "start": 42,
+        "end": 53,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/chaetognath"
+      },
+      {
+        "id": "t3",
+        "text": "lophophore",
+        "start": 59,
+        "end": 69,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/lophophore"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "zoology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "zoology.01.extended",
+    "family_id": "zoology.01",
+    "category": "zoology",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is opisthobranch. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading chaetognath. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to opisthobranch, and a printed note refers to lophophore. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: opisthobranch. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "opisthobranch",
+        "start": 64,
+        "end": 77,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthobranch"
+      },
+      {
+        "id": "t2",
+        "text": "chaetognath",
+        "start": 204,
+        "end": 215,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/chaetognath"
+      },
+      {
+        "id": "t3",
+        "text": "opisthobranch",
+        "start": 373,
+        "end": 386,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthobranch"
+      },
+      {
+        "id": "t4",
+        "text": "lophophore",
+        "start": 417,
+        "end": 427,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/lophophore"
+      },
+      {
+        "id": "t5",
+        "text": "opisthobranch",
+        "start": 568,
+        "end": 581,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/opisthobranch"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "zoology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "zoology.01.control",
+    "family_id": "zoology.01",
+    "category": "zoology",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "zoology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "astronomy.01.isolated",
+    "family_id": "astronomy.01",
+    "category": "astronomy",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names analemma. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "analemma",
+        "start": 16,
+        "end": 24,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/analemma"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "astronomy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "astronomy.01.dense",
+    "family_id": "astronomy.01",
+    "category": "astronomy",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists analemma, apsidal, and anomalistic. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "analemma",
+        "start": 27,
+        "end": 35,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/analemma"
+      },
+      {
+        "id": "t2",
+        "text": "apsidal",
+        "start": 37,
+        "end": 44,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/apsidal"
+      },
+      {
+        "id": "t3",
+        "text": "anomalistic",
+        "start": 50,
+        "end": 61,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anomalistic"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "astronomy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "astronomy.01.extended",
+    "family_id": "astronomy.01",
+    "category": "astronomy",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is analemma. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading apsidal. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to analemma, and a printed note refers to anomalistic. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: analemma. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "analemma",
+        "start": 64,
+        "end": 72,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/analemma"
+      },
+      {
+        "id": "t2",
+        "text": "apsidal",
+        "start": 199,
+        "end": 206,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/apsidal"
+      },
+      {
+        "id": "t3",
+        "text": "analemma",
+        "start": 364,
+        "end": 372,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/analemma"
+      },
+      {
+        "id": "t4",
+        "text": "anomalistic",
+        "start": 403,
+        "end": 414,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/anomalistic"
+      },
+      {
+        "id": "t5",
+        "text": "analemma",
+        "start": 555,
+        "end": 563,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/analemma"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "astronomy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "astronomy.01.control",
+    "family_id": "astronomy.01",
+    "category": "astronomy",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "astronomy.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mathematics.01.isolated",
+    "family_id": "mathematics.01",
+    "category": "mathematics",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names homeomorphism. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "homeomorphism",
+        "start": 16,
+        "end": 29,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/homeomorphism"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 1.65,
+      "tier": "rare",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mathematics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mathematics.01.dense",
+    "family_id": "mathematics.01",
+    "category": "mathematics",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists homeomorphism, equicontinuity, and diffeomorphism. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "homeomorphism",
+        "start": 27,
+        "end": 40,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/homeomorphism"
+      },
+      {
+        "id": "t2",
+        "text": "equicontinuity",
+        "start": 42,
+        "end": 56,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/equicontinuity"
+      },
+      {
+        "id": "t3",
+        "text": "diffeomorphism",
+        "start": 62,
+        "end": 76,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/diffeomorphism"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 1.65,
+      "tier": "rare",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mathematics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mathematics.01.extended",
+    "family_id": "mathematics.01",
+    "category": "mathematics",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is homeomorphism. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading equicontinuity. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to homeomorphism, and a printed note refers to diffeomorphism. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: homeomorphism. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "homeomorphism",
+        "start": 64,
+        "end": 77,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/homeomorphism"
+      },
+      {
+        "id": "t2",
+        "text": "equicontinuity",
+        "start": 204,
+        "end": 218,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/equicontinuity"
+      },
+      {
+        "id": "t3",
+        "text": "homeomorphism",
+        "start": 376,
+        "end": 389,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/homeomorphism"
+      },
+      {
+        "id": "t4",
+        "text": "diffeomorphism",
+        "start": 420,
+        "end": 434,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/diffeomorphism"
+      },
+      {
+        "id": "t5",
+        "text": "homeomorphism",
+        "start": 575,
+        "end": 588,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/homeomorphism"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 1.65,
+      "tier": "rare",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mathematics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "mathematics.01.control",
+    "family_id": "mathematics.01",
+    "category": "mathematics",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 1.65,
+      "tier": "rare",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "mathematics.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "musicology.01.isolated",
+    "family_id": "musicology.01",
+    "category": "musicology",
+    "variant": "isolated",
+    "language": "en",
+    "text": "The entry names sesquialtera. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "sesquialtera",
+        "start": 16,
+        "end": 28,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/sesquialtera"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "musicology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "musicology.01.dense",
+    "family_id": "musicology.01",
+    "category": "musicology",
+    "variant": "dense",
+    "language": "en",
+    "text": "The specialist index lists sesquialtera, hemiola, and isorhythm. Each term has its own entry. Keep all three entries in that order.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "sesquialtera",
+        "start": 27,
+        "end": 39,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/sesquialtera"
+      },
+      {
+        "id": "t2",
+        "text": "hemiola",
+        "start": 41,
+        "end": 48,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/hemiola"
+      },
+      {
+        "id": "t3",
+        "text": "isorhythm",
+        "start": 54,
+        "end": 63,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/isorhythm"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "musicology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "musicology.01.extended",
+    "family_id": "musicology.01",
+    "category": "musicology",
+    "variant": "extended",
+    "language": "en",
+    "text": "This is a spoken transcription of an index card. The heading is sesquialtera. The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading hemiola. Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to sesquialtera, and a printed note refers to isorhythm. The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading: sesquialtera. The recording ends after this sentence.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "sesquialtera",
+        "start": 64,
+        "end": 76,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/sesquialtera"
+      },
+      {
+        "id": "t2",
+        "text": "hemiola",
+        "start": 203,
+        "end": 210,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/hemiola"
+      },
+      {
+        "id": "t3",
+        "text": "sesquialtera",
+        "start": 368,
+        "end": 380,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/sesquialtera"
+      },
+      {
+        "id": "t4",
+        "text": "isorhythm",
+        "start": 411,
+        "end": 420,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/isorhythm"
+      },
+      {
+        "id": "t5",
+        "text": "sesquialtera",
+        "start": 561,
+        "end": 573,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/sesquialtera"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "musicology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  },
+  {
+    "id": "musicology.01.control",
+    "family_id": "musicology.01",
+    "category": "musicology",
+    "variant": "control",
+    "language": "en",
+    "text": "The entry names garden. Read the entry once, then continue to the next page.",
+    "targets": [
+      {
+        "id": "t1",
+        "text": "garden",
+        "start": 16,
+        "end": 22,
+        "spoken_forms": [],
+        "pronunciation_status": "unreviewed",
+        "reference_url": "https://en.wiktionary.org/wiki/garden"
+      }
+    ],
+    "rarity": {
+      "provider": "wordfreq",
+      "version": "3.1.1",
+      "language": "en",
+      "wordlist": "large",
+      "zipf": 0.0,
+      "tier": "below-coverage",
+      "meaning": "general written-frequency estimate; not training exposure or difficulty",
+      "source": "https://github.com/rspeer/wordfreq"
+    },
+    "authorship": "Original carrier text by RareSpeech; candidate lexemes",
+    "review_status": "candidate",
+    "control_pair": "musicology.01.control",
+    "notes": "Control matches isolated sentence structure, not term length. Dense passages are index readouts, not scientific assertions."
+  }
+]

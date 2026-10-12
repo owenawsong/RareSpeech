@@ -1,0 +1,16 @@
+name: Challenge or reproduced failure
+description: Propose a documented rare-text case or share inspectable audio evidence.
+body:
+  - type: textarea
+    attributes:
+      label: Text and designated targets
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Source and accepted spoken forms
+      description: Include language/accent and pronunciation evidence.
+  - type: textarea
+    attributes:
+      label: Model, corpus hash, ASR and evidence
+      description: No private audio or credentials. Explain whether you listened or only inspected ASR.

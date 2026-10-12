@@ -1,0 +1,8 @@
+{
+  "type": "command",
+  "argv": ["your-tts", "--input", "{text_file}", "--output", "{output}", "--seed", "{seed}"],
+  "timeout": 180,
+  "model": "your-model",
+  "revision": "replace-with-checkpoint-or-commit",
+  "seed_supported": true
+}

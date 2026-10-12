@@ -1,0 +1,113 @@
+{
+  "schema": "rarespeech.asr-audit.v1",
+  "left": "0f2ff02eac65db68c4044dd7a944690b6c9fc1c76a3800e509a9a99758960935",
+  "right": "299a3dba16737ab8ad5df4ce57aca8f254485c5a15a5737743a10009082e92e1",
+  "disagreements": [
+    {
+      "sample_id": "botany.01.isolated--r1",
+      "target_id": "t1",
+      "text": "anemophily",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "botany.01.extended--r1",
+      "target_id": "t1",
+      "text": "anemophily",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "botany.01.extended--r1",
+      "target_id": "t3",
+      "text": "anemophily",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "botany.01.extended--r1",
+      "target_id": "t4",
+      "text": "phyllotaxis",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "manuscripts.01.dense--r1",
+      "target_id": "t1",
+      "text": "opisthograph",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "manuscripts.01.extended--r1",
+      "target_id": "t1",
+      "text": "opisthograph",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "manuscripts.01.extended--r1",
+      "target_id": "t3",
+      "text": "opisthograph",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "linguistics.01.extended--r1",
+      "target_id": "t4",
+      "text": "epenthesis",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "zoology.01.dense--r1",
+      "target_id": "t3",
+      "text": "lophophore",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "zoology.01.extended--r1",
+      "target_id": "t4",
+      "text": "lophophore",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "mathematics.01.dense--r1",
+      "target_id": "t2",
+      "text": "equicontinuity",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.dense--r1",
+      "target_id": "t1",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.dense--r1",
+      "target_id": "t3",
+      "text": "isorhythm",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.extended--r1",
+      "target_id": "t1",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "musicology.01.extended--r1",
+      "target_id": "t3",
+      "text": "sesquialtera",
+      "left_retained": false,
+      "right_retained": true
+    }
+  ],
+  "note": "Recognizer disagreement; neither side establishes correct pronunciation."
+}

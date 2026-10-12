@@ -1,0 +1,36 @@
+{
+  "schema": "rarespeech.run.v1",
+  "version": "0.1.0",
+  "identity": {
+    "corpus_hash": "8df1b8ee2db9b00aa5c495d726294ebcf81ed4dc418bd36a2f31380c56260c49",
+    "adapter": {
+      "type": "python",
+      "config_hash": "bbd3866c7122c08de716d074870314e51461840b20e109fa6d32b5b443ca3959",
+      "model": "piper-en_US-danny-low",
+      "voice": null,
+      "revision": "weights-sha256:56a9ae9499e961514f060aac2866cb323a21e5989592fc4f208e56fdc323ab64",
+      "parameters": {},
+      "options": {},
+      "seed_supported": false
+    },
+    "model_label": "Piper-danny-low",
+    "repeats": 1,
+    "base_seed": 17
+  },
+  "created_utc": "2026-10-12T05:04:35.636053+00:00",
+  "environment": {
+    "python": "3.12.11",
+    "os": "Windows",
+    "machine": "AMD64"
+  },
+  "timing_scope": "wall time per adapter call; no streaming/TTFA claim; startup excluded",
+  "reuse_source_identity": "bd614d795d628a97b3f9c4ca2c0aad4be86eb5560143420ba36c212ffaac5c7b",
+  "adapter_load_seconds": 2.4456331999972463,
+  "publication": {
+    "status": "engineering integration pilot, not benchmark ranking",
+    "selection": "first family in each domain; isolated/dense/extended/control; one generation",
+    "reviewed": false,
+    "author_relationship": "Inflect is maintained by Owen Song",
+    "scope": "English; local CPU inference; automatic ASR diagnostics"
+  }
+}

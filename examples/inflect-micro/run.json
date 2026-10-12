@@ -1,0 +1,39 @@
+{
+  "schema": "rarespeech.run.v1",
+  "version": "0.1.0",
+  "identity": {
+    "corpus_hash": "8df1b8ee2db9b00aa5c495d726294ebcf81ed4dc418bd36a2f31380c56260c49",
+    "adapter": {
+      "type": "python",
+      "config_hash": "601711080fc5a2c34b9eee2ace1e64744548d17136a1f5ae7157620f1057ed68",
+      "model": "inflect-micro-v2",
+      "voice": null,
+      "revision": "weights-sha256:3eede065c9ccfa88ade0a5a9a5c23de34afcbbb32213e59aad44d5cf100fdee8",
+      "parameters": {},
+      "options": {
+        "device": "cpu",
+        "threads": 2
+      },
+      "seed_supported": true
+    },
+    "model_label": "Inflect-Micro-v2",
+    "repeats": 1,
+    "base_seed": 17
+  },
+  "created_utc": "2026-10-12T05:04:40.962029+00:00",
+  "environment": {
+    "python": "3.12.11",
+    "os": "Windows",
+    "machine": "AMD64"
+  },
+  "timing_scope": "wall time per adapter call; no streaming/TTFA claim; startup excluded",
+  "reuse_source_identity": "66ac6fee37e552db86e099ebc3099c85b8570e4b9987d104b2f604bbe06b90bb",
+  "adapter_load_seconds": 3.3605127000046195,
+  "publication": {
+    "status": "engineering integration pilot, not benchmark ranking",
+    "selection": "first family in each domain; isolated/dense/extended/control; one generation",
+    "reviewed": false,
+    "author_relationship": "Inflect is maintained by Owen Song",
+    "scope": "English; local CPU inference; automatic ASR diagnostics"
+  }
+}
