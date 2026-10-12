@@ -1,21 +1,31 @@
-# Challenge collection · v0.1
+# RareSpeech dataset card · v0.2
 
-**Status:** authored candidate collection; expert pronunciation validation pending.
+**Candidate English research collection.** Independent specialist pronunciation validation is pending. Authored carrier text and annotations are CC BY-SA 4.0. Software is MIT.
 
-320 cases / 64 term families / eight domains / five conditions. English. Original carrier text and annotations are CC BY-SA 4.0. `manifest.json` records the hash and limitations; `scripts/build_corpus.py` reproduces the collection with pinned wordfreq metadata.
+| Frozen track | Cases | Conditions | Intended use |
+|---|---:|---|---|
+| Core v1 | 128 | Bare term; short neutral context | Balanced primary-target retention |
+| Stress v1 | 192 | Repetition; long context; familiar control | Condition diagnostics |
+| Legacy v0.1 | 320 | Original five conditions | Reproduce integration pilots |
+
+The core/stress tracks retain the original 64 primary specialist lexemes across eight domains. Each core case has one anchored occurrence. Repetition and long-context cases each have three. Related opisthograph derivations share a resampling cluster, giving 63 declared lexical clusters in the core. This annotation does not prove biological or linguistic independence.
+
+## Construction and provenance
+
+`scripts/build_corpus.py` reproduces the frozen legacy collection using wordfreq 3.1.1. `scripts/build_core.py` derives the core/stress text and emits `core-manifest.json` with both hashes and control design. Sixteen neutral short carriers rotate across families; the longer/repetition carriers remain shared templates. Lexical entry checks are in `lexical-source-checks.json`; an existing dictionary page does not establish expert-approved pronunciation.
+
+Frequency metadata describes the primary family term, not all neighboring legacy targets. Zipf zero means below the list's coverage, **not** zero real frequency or absence from training. General written frequency cannot establish spoken rarity or rarity within a specialist field.
+
+Familiar controls prefer exact written character length, then a close length from a documented common-word pool. Matching is approximate and does not control phonemes, syllables, stress, semantic familiarity or spoken duration. The control gap cannot establish a causal rarity effect. Legacy controls use “garden” and have no length matching.
 
 ## Fields
 
-`id`, `family_id`, `category`, `variant`, `language`, `text`, `targets`, `rarity`, `review_status`, `control_pair`, `notes`.
+Cases carry `id`, `family_id`, `category`, `variant`, `language`, `text`, `targets`, `rarity`, review status and notes. New tracks add `track`, `cluster_id`, `primary_term`, `carrier_id`, `condition_label` and control design. IDs retain historical condition codes: core `dense` means **short neutral context**, stress `confusable` means **repetition**. These codes are compatibility names, not acoustic claims.
 
-Targets contain an ID, written spelling, Python character offsets, optional accepted spoken forms, review status and discovery link. These are not UTF-8 byte offsets. All current terms use BMP characters; future non-BMP terms require corresponding frontend offset handling.
+Target offsets are Python character offsets, not UTF-8 bytes. Terms in this release use BMP characters. Targets include discovery links and optional accepted written forms; they do not include guessed phonetic references.
 
-## Construction
+## What has and has not been validated
 
-Original sentences present terms as index entries to avoid unsupported scientific assertions. Conditions increase target density, introduce deliberate repetition, and extend passages. Controls repeat the familiar isolated carrier with “garden.” They lack word-length matching and cannot establish a causal obscurity penalty.
+Software checks validate offsets, case counts, grouping, frequency provenance, source entries, hashes and measured audio/transcript bindings. Expert-approved pronunciations, reference recordings, independent human agreement and proxy calibration remain pending. No hidden test set exists; training on these public cases can contaminate comparisons. Carrier diversity and English-only coverage limit generalization.
 
-Frequency estimates cover the primary family term, not every neighboring target. Zipf zero means below list coverage, not proof of absence in training or in the wild. General written frequency does not establish spoken rarity; words may be familiar within their fields.
-
-## Limitations
-
-Repeated carrier templates limit contextual diversity. Expert pronunciations, discovery-link availability and specialist correctness are not independently validated. There is no hidden private test; future training on the published cases can contaminate comparisons. Publish selected IDs, hashes and settings with results. Use this collection for diagnostics and qualified review development, not an established human-quality ranking.
+Publish the selected corpus/evaluator hash, voice, weights, repeat/seed settings, recognizer identity and review coverage with every result. A subset is a diagnostic selection, not a canonical core score. See [methodology](../docs/METHODOLOGY.md) and [validation plan](../docs/RESEARCH_PLAN.md).

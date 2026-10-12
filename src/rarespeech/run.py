@@ -125,10 +125,17 @@ def generate(cases, config, out: Path, model_label: str, repeats=1, seed=17, res
 
 def transcribe(run_dir: Path, out: Path, model="small.en", device="cpu", compute="int8", resume=False):
     from faster_whisper import WhisperModel
+    from faster_whisper.utils import download_model
 
     # Language fixed; do not prime ASR with benchmark target words.
-    engine = WhisperModel(model, device=device, compute_type=compute, cpu_threads=2, num_workers=1)
+    local_model = Path(model) if Path(model).is_dir() else Path(download_model(model))
+    weights = local_model / "model.bin"
+    config_path = local_model / "config.json"
+    engine = WhisperModel(str(local_model), device=device, compute_type=compute, cpu_threads=2, num_workers=1)
+    model_label = "local-model" if Path(model).is_dir() else model
     settings = {
+        "model_weights_sha256": file_hash(weights),
+        "model_config_sha256": file_hash(config_path),
         "faster_whisper_version": importlib.metadata.version("faster-whisper"),
         "ctranslate2_version": importlib.metadata.version("ctranslate2"),
         "cpu_threads": 2,
@@ -152,7 +159,7 @@ def transcribe(run_dir: Path, out: Path, model="small.en", device="cpu", compute
         if (
             old
             and old.get("audio_hash") == sample["audio_hash"]
-            and old.get("engine") == f"faster-whisper/{model}"
+            and old.get("engine") == f"faster-whisper/{model_label}"
             and old.get("settings") == settings
         ):
             rows.append(old)
@@ -171,7 +178,7 @@ def transcribe(run_dir: Path, out: Path, model="small.en", device="cpu", compute
                 "id": sample["id"],
                 "text": " ".join(s.text.strip() for s in segments),
                 "audio_hash": sample["audio_hash"],
-                "engine": f"faster-whisper/{model}",
+                "engine": f"faster-whisper/{model_label}",
                 "settings": settings,
             }
         )

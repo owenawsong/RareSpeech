@@ -1,0 +1,830 @@
+{
+  "schema": "rarespeech.compare.v1",
+  "corpus_hash": "f559cd383f70e35ab8419e7a4698beba2d81cce76369e9b163d4d34b8daf03db",
+  "baseline": "3e56205d5bb89c6c09e980e1dd1401f01db611f204baee8295ddb124c17e26d9",
+  "candidate": "aa952a4b794a515973c4c46d3b319c8c0b1e747b74cd1fcb508f984251decf05",
+  "changes": [
+    {
+      "id": "core.mineralogy.01.isolated--r1",
+      "target": "omphacite",
+      "status": "improved"
+    },
+    {
+      "id": "core.mineralogy.08.isolated--r1",
+      "target": "eclogite",
+      "status": "improved"
+    },
+    {
+      "id": "core.botany.03.dense--r1",
+      "target": "phyllotaxis",
+      "status": "regressed"
+    },
+    {
+      "id": "core.botany.04.isolated--r1",
+      "target": "gynobasic",
+      "status": "improved"
+    },
+    {
+      "id": "core.botany.05.dense--r1",
+      "target": "peltate",
+      "status": "improved"
+    },
+    {
+      "id": "core.manuscripts.01.dense--r1",
+      "target": "opisthograph",
+      "status": "improved"
+    },
+    {
+      "id": "core.manuscripts.02.isolated--r1",
+      "target": "quaternion",
+      "status": "improved"
+    },
+    {
+      "id": "core.manuscripts.03.isolated--r1",
+      "target": "bifolium",
+      "status": "improved"
+    },
+    {
+      "id": "core.manuscripts.04.dense--r1",
+      "target": "ductus",
+      "status": "improved"
+    },
+    {
+      "id": "core.manuscripts.06.isolated--r1",
+      "target": "palaeography",
+      "status": "improved"
+    },
+    {
+      "id": "core.manuscripts.08.isolated--r1",
+      "target": "opisthographic",
+      "status": "regressed"
+    },
+    {
+      "id": "core.linguistics.01.isolated--r1",
+      "target": "haplology",
+      "status": "improved"
+    },
+    {
+      "id": "core.linguistics.05.dense--r1",
+      "target": "metathesis",
+      "status": "improved"
+    },
+    {
+      "id": "core.linguistics.07.isolated--r1",
+      "target": "allomorphy",
+      "status": "improved"
+    },
+    {
+      "id": "core.linguistics.07.dense--r1",
+      "target": "allomorphy",
+      "status": "improved"
+    },
+    {
+      "id": "core.zoology.07.dense--r1",
+      "target": "platyhelminth",
+      "status": "improved"
+    },
+    {
+      "id": "core.astronomy.04.isolated--r1",
+      "target": "syzygy",
+      "status": "improved"
+    },
+    {
+      "id": "core.astronomy.05.isolated--r1",
+      "target": "saros",
+      "status": "improved"
+    },
+    {
+      "id": "core.astronomy.05.dense--r1",
+      "target": "saros",
+      "status": "regressed"
+    },
+    {
+      "id": "core.astronomy.08.isolated--r1",
+      "target": "nutation",
+      "status": "improved"
+    },
+    {
+      "id": "core.mathematics.01.isolated--r1",
+      "target": "homeomorphism",
+      "status": "improved"
+    },
+    {
+      "id": "core.mathematics.04.dense--r1",
+      "target": "Noetherian",
+      "status": "regressed"
+    },
+    {
+      "id": "core.mathematics.05.isolated--r1",
+      "target": "idempotence",
+      "status": "improved"
+    },
+    {
+      "id": "core.mathematics.06.dense--r1",
+      "target": "holonomy",
+      "status": "improved"
+    },
+    {
+      "id": "core.mathematics.08.isolated--r1",
+      "target": "quasiconformal",
+      "status": "improved"
+    },
+    {
+      "id": "core.musicology.01.dense--r1",
+      "target": "sesquialtera",
+      "status": "improved"
+    },
+    {
+      "id": "core.musicology.02.isolated--r1",
+      "target": "hemiola",
+      "status": "improved"
+    },
+    {
+      "id": "core.musicology.04.dense--r1",
+      "target": "passacaglia",
+      "status": "regressed"
+    }
+  ],
+  "paired_analysis": {
+    "protocol_id": "rarespeech.balanced-primary.v1",
+    "complete": true,
+    "candidate_minus_baseline": {
+      "primary_target_retention": 0.140625,
+      "all_target_retention": 0.140625
+    },
+    "intervals_95_percentile": {
+      "primary_target_retention": [
+        0.0703125,
+        0.20870535714285715
+      ],
+      "all_target_retention": [
+        0.0703125,
+        0.20870535714285715
+      ]
+    },
+    "interval_unavailable_reason": null,
+    "resampling": {
+      "unit": "lexical-dependency cluster",
+      "strata": "category",
+      "paired": true,
+      "draws": 1000,
+      "seed": 17
+    },
+    "dependency_design": {
+      "method": "shared-normalized-target/accepted-form and declared-cluster transitive closure",
+      "clusters": [
+        {
+          "id": "astronomy.01",
+          "families": [
+            "astronomy.01"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.02",
+          "families": [
+            "astronomy.02"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.03",
+          "families": [
+            "astronomy.03"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.04",
+          "families": [
+            "astronomy.04"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.05",
+          "families": [
+            "astronomy.05"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.06",
+          "families": [
+            "astronomy.06"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.07",
+          "families": [
+            "astronomy.07"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "astronomy.08",
+          "families": [
+            "astronomy.08"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "botany.01",
+          "families": [
+            "botany.01"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.02",
+          "families": [
+            "botany.02"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.03",
+          "families": [
+            "botany.03"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.04",
+          "families": [
+            "botany.04"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.05",
+          "families": [
+            "botany.05"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.06",
+          "families": [
+            "botany.06"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.07",
+          "families": [
+            "botany.07"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "botany.08",
+          "families": [
+            "botany.08"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "linguistics.01",
+          "families": [
+            "linguistics.01"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.02",
+          "families": [
+            "linguistics.02"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.03",
+          "families": [
+            "linguistics.03"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.04",
+          "families": [
+            "linguistics.04"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.05",
+          "families": [
+            "linguistics.05"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.06",
+          "families": [
+            "linguistics.06"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.07",
+          "families": [
+            "linguistics.07"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "linguistics.08",
+          "families": [
+            "linguistics.08"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "manuscripts.01",
+          "families": [
+            "manuscripts.01",
+            "manuscripts.08"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "manuscripts.02",
+          "families": [
+            "manuscripts.02"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "manuscripts.03",
+          "families": [
+            "manuscripts.03"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "manuscripts.04",
+          "families": [
+            "manuscripts.04"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "manuscripts.05",
+          "families": [
+            "manuscripts.05"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "manuscripts.06",
+          "families": [
+            "manuscripts.06"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "manuscripts.07",
+          "families": [
+            "manuscripts.07"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "mathematics.01",
+          "families": [
+            "mathematics.01"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.02",
+          "families": [
+            "mathematics.02"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.03",
+          "families": [
+            "mathematics.03"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.04",
+          "families": [
+            "mathematics.04"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.05",
+          "families": [
+            "mathematics.05"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.06",
+          "families": [
+            "mathematics.06"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.07",
+          "families": [
+            "mathematics.07"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mathematics.08",
+          "families": [
+            "mathematics.08"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mineralogy.01",
+          "families": [
+            "mineralogy.01"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.02",
+          "families": [
+            "mineralogy.02"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.03",
+          "families": [
+            "mineralogy.03"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.04",
+          "families": [
+            "mineralogy.04"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.05",
+          "families": [
+            "mineralogy.05"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.06",
+          "families": [
+            "mineralogy.06"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.07",
+          "families": [
+            "mineralogy.07"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "mineralogy.08",
+          "families": [
+            "mineralogy.08"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "musicology.01",
+          "families": [
+            "musicology.01"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.02",
+          "families": [
+            "musicology.02"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.03",
+          "families": [
+            "musicology.03"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.04",
+          "families": [
+            "musicology.04"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.05",
+          "families": [
+            "musicology.05"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.06",
+          "families": [
+            "musicology.06"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.07",
+          "families": [
+            "musicology.07"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "musicology.08",
+          "families": [
+            "musicology.08"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "zoology.01",
+          "families": [
+            "zoology.01"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.02",
+          "families": [
+            "zoology.02"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.03",
+          "families": [
+            "zoology.03"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.04",
+          "families": [
+            "zoology.04"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.05",
+          "families": [
+            "zoology.05"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.06",
+          "families": [
+            "zoology.06"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.07",
+          "families": [
+            "zoology.07"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        },
+        {
+          "id": "zoology.08",
+          "families": [
+            "zoology.08"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        }
+      ],
+      "family_to_cluster": {
+        "astronomy.01": "astronomy.01",
+        "astronomy.02": "astronomy.02",
+        "astronomy.03": "astronomy.03",
+        "astronomy.04": "astronomy.04",
+        "astronomy.05": "astronomy.05",
+        "astronomy.06": "astronomy.06",
+        "astronomy.07": "astronomy.07",
+        "astronomy.08": "astronomy.08",
+        "botany.01": "botany.01",
+        "botany.02": "botany.02",
+        "botany.03": "botany.03",
+        "botany.04": "botany.04",
+        "botany.05": "botany.05",
+        "botany.06": "botany.06",
+        "botany.07": "botany.07",
+        "botany.08": "botany.08",
+        "linguistics.01": "linguistics.01",
+        "linguistics.02": "linguistics.02",
+        "linguistics.03": "linguistics.03",
+        "linguistics.04": "linguistics.04",
+        "linguistics.05": "linguistics.05",
+        "linguistics.06": "linguistics.06",
+        "linguistics.07": "linguistics.07",
+        "linguistics.08": "linguistics.08",
+        "manuscripts.01": "manuscripts.01",
+        "manuscripts.08": "manuscripts.01",
+        "manuscripts.02": "manuscripts.02",
+        "manuscripts.03": "manuscripts.03",
+        "manuscripts.04": "manuscripts.04",
+        "manuscripts.05": "manuscripts.05",
+        "manuscripts.06": "manuscripts.06",
+        "manuscripts.07": "manuscripts.07",
+        "mathematics.01": "mathematics.01",
+        "mathematics.02": "mathematics.02",
+        "mathematics.03": "mathematics.03",
+        "mathematics.04": "mathematics.04",
+        "mathematics.05": "mathematics.05",
+        "mathematics.06": "mathematics.06",
+        "mathematics.07": "mathematics.07",
+        "mathematics.08": "mathematics.08",
+        "mineralogy.01": "mineralogy.01",
+        "mineralogy.02": "mineralogy.02",
+        "mineralogy.03": "mineralogy.03",
+        "mineralogy.04": "mineralogy.04",
+        "mineralogy.05": "mineralogy.05",
+        "mineralogy.06": "mineralogy.06",
+        "mineralogy.07": "mineralogy.07",
+        "mineralogy.08": "mineralogy.08",
+        "musicology.01": "musicology.01",
+        "musicology.02": "musicology.02",
+        "musicology.03": "musicology.03",
+        "musicology.04": "musicology.04",
+        "musicology.05": "musicology.05",
+        "musicology.06": "musicology.06",
+        "musicology.07": "musicology.07",
+        "musicology.08": "musicology.08",
+        "zoology.01": "zoology.01",
+        "zoology.02": "zoology.02",
+        "zoology.03": "zoology.03",
+        "zoology.04": "zoology.04",
+        "zoology.05": "zoology.05",
+        "zoology.06": "zoology.06",
+        "zoology.07": "zoology.07",
+        "zoology.08": "zoology.08"
+      },
+      "clusters_per_category": {
+        "astronomy": 8,
+        "botany": 8,
+        "linguistics": 8,
+        "manuscripts": 7,
+        "mathematics": 8,
+        "mineralogy": 8,
+        "musicology": 8,
+        "zoology": 8
+      },
+      "cross_category_clusters": [],
+      "shared_targets": [],
+      "interval_eligible": true,
+      "interval_unavailable_reason": null,
+      "limitation": "Lexical closure does not account for all morphological, carrier or speaker dependencies."
+    },
+    "note": "Conditional on these terms, carriers, voices and ASR; does not include recognizer or human-review bias."
+  },
+  "note": "ASR proxy changes; confirm by listening. Different ASR configurations are a confound."
+}

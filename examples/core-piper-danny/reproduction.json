@@ -1,0 +1,15 @@
+{
+  "scope": "Additional reproduction notes recorded during release preparation; original capture identity is unchanged.",
+  "factory": "rarespeech.integrations:piper",
+  "model": "en_US-danny-low",
+  "weights_sha256": "56a9ae9499e961514f060aac2866cb323a21e5989592fc4f208e56fdc323ab64",
+  "voice_config_sha256": "191dea1ba9863199d8ca2e9048f83b219219fb450f62767ee02f1bc4568ce4f4",
+  "packages": {
+    "piper-tts": "1.5.0",
+    "onnxruntime": "1.26.0"
+  },
+  "device": "cpu",
+  "synthesis": "PiperVoice.synthesize_wav defaults; no prompt normalization by RareSpeech",
+  "seed_supported": false,
+  "source": "https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/danny/low"
+}

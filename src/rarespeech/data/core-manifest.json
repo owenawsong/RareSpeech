@@ -1,0 +1,587 @@
+{
+  "schema": "rarespeech.track.v1",
+  "version": "0.2.0",
+  "protocol": "core-v1",
+  "status": "candidate research track; acoustic pronunciation validation pending",
+  "cases": 128,
+  "families": 64,
+  "independent_lexical_clusters": 63,
+  "conditions": [
+    "Bare term",
+    "Short context"
+  ],
+  "corpus_hash": "f559cd383f70e35ab8419e7a4698beba2d81cce76369e9b163d4d34b8daf03db",
+  "stress_cases": 192,
+  "stress_hash": "2cc974e0ea008fe82fe54b44a904a8ee4aa82754a678e524a2375eba9e5f7635",
+  "carrier_templates": 16,
+  "categories": [
+    {
+      "id": "mineralogy",
+      "label": "Mineralogy",
+      "description": "Minerals, textures & formations",
+      "families": 8
+    },
+    {
+      "id": "botany",
+      "label": "Botany",
+      "description": "Structures & specialist descriptions",
+      "families": 8
+    },
+    {
+      "id": "manuscripts",
+      "label": "Manuscript studies",
+      "description": "Books, inscriptions & letterforms",
+      "families": 8
+    },
+    {
+      "id": "linguistics",
+      "label": "Linguistics",
+      "description": "Sounds & grammatical structures",
+      "families": 8
+    },
+    {
+      "id": "zoology",
+      "label": "Zoology",
+      "description": "Anatomy & uncommon descriptors",
+      "families": 8
+    },
+    {
+      "id": "astronomy",
+      "label": "Astronomy",
+      "description": "Orbits & celestial mechanics",
+      "families": 8
+    },
+    {
+      "id": "mathematics",
+      "label": "Mathematics",
+      "description": "Structures & specialist vocabulary",
+      "families": 8
+    },
+    {
+      "id": "musicology",
+      "label": "Musicology",
+      "description": "Forms, ornaments & notation",
+      "families": 8
+    }
+  ],
+  "controls": [
+    {
+      "family": "mineralogy.01",
+      "rare_term": "omphacite",
+      "control_term": "education",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.02",
+      "rare_term": "aegirine",
+      "control_term": "children",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.03",
+      "rare_term": "clinozoisite",
+      "control_term": "relationship",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.04",
+      "rare_term": "riebeckite",
+      "control_term": "photograph",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.05",
+      "rare_term": "lawsonite",
+      "control_term": "education",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.06",
+      "rare_term": "charnockite",
+      "control_term": "development",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.07",
+      "rare_term": "serpentinite",
+      "control_term": "organization",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "mineralogy.08",
+      "rare_term": "eclogite",
+      "control_term": "question",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.01",
+      "rare_term": "anemophily",
+      "control_term": "government",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.02",
+      "rare_term": "cleistogamy",
+      "control_term": "development",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.03",
+      "rare_term": "phyllotaxis",
+      "control_term": "environment",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.04",
+      "rare_term": "gynobasic",
+      "control_term": "community",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.05",
+      "rare_term": "peltate",
+      "control_term": "picture",
+      "rare_characters": 7,
+      "control_characters": 7,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.06",
+      "rare_term": "saxicolous",
+      "control_term": "university",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.07",
+      "rare_term": "epipetalous",
+      "control_term": "environment",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "botany.08",
+      "rare_term": "cauliflory",
+      "control_term": "photograph",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.01",
+      "rare_term": "opisthograph",
+      "control_term": "conversation",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.02",
+      "rare_term": "quaternion",
+      "control_term": "university",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.03",
+      "rare_term": "bifolium",
+      "control_term": "computer",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.04",
+      "rare_term": "ductus",
+      "control_term": "window",
+      "rare_characters": 6,
+      "control_characters": 6,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.05",
+      "rare_term": "rubrication",
+      "control_term": "information",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.06",
+      "rare_term": "palaeography",
+      "control_term": "organization",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.07",
+      "rare_term": "codicology",
+      "control_term": "experience",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "manuscripts.08",
+      "rare_term": "opisthographic",
+      "control_term": "transportation",
+      "rare_characters": 14,
+      "control_characters": 14,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.01",
+      "rare_term": "haplology",
+      "control_term": "education",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.02",
+      "rare_term": "anaptyxis",
+      "control_term": "important",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.03",
+      "rare_term": "epenthesis",
+      "control_term": "experience",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.04",
+      "rare_term": "apocope",
+      "control_term": "picture",
+      "rare_characters": 7,
+      "control_characters": 7,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.05",
+      "rare_term": "metathesis",
+      "control_term": "government",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.06",
+      "rare_term": "suppletion",
+      "control_term": "university",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.07",
+      "rare_term": "allomorphy",
+      "control_term": "experience",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "linguistics.08",
+      "rare_term": "enclitic",
+      "control_term": "question",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.01",
+      "rare_term": "opisthobranch",
+      "control_term": "understanding",
+      "rare_characters": 13,
+      "control_characters": 13,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.02",
+      "rare_term": "chaetognath",
+      "control_term": "development",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.03",
+      "rare_term": "lophophore",
+      "control_term": "experience",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.04",
+      "rare_term": "pterygopodium",
+      "control_term": "international",
+      "rare_characters": 13,
+      "control_characters": 13,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.05",
+      "rare_term": "cnidocyte",
+      "control_term": "education",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.06",
+      "rare_term": "cercopithecine",
+      "control_term": "administration",
+      "rare_characters": 14,
+      "control_characters": 14,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.07",
+      "rare_term": "platyhelminth",
+      "control_term": "understanding",
+      "rare_characters": 13,
+      "control_characters": 13,
+      "exact_length_match": true
+    },
+    {
+      "family": "zoology.08",
+      "rare_term": "urochordate",
+      "control_term": "opportunity",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.01",
+      "rare_term": "analemma",
+      "control_term": "building",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.02",
+      "rare_term": "apsidal",
+      "control_term": "meeting",
+      "rare_characters": 7,
+      "control_characters": 7,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.03",
+      "rare_term": "anomalistic",
+      "control_term": "environment",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.04",
+      "rare_term": "syzygy",
+      "control_term": "garden",
+      "rare_characters": 6,
+      "control_characters": 6,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.05",
+      "rare_term": "saros",
+      "control_term": "work",
+      "rare_characters": 5,
+      "control_characters": 4,
+      "exact_length_match": false
+    },
+    {
+      "family": "astronomy.06",
+      "rare_term": "selenographic",
+      "control_term": "international",
+      "rare_characters": 13,
+      "control_characters": 13,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.07",
+      "rare_term": "lunisolar",
+      "control_term": "different",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "astronomy.08",
+      "rare_term": "nutation",
+      "control_term": "question",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.01",
+      "rare_term": "homeomorphism",
+      "control_term": "understanding",
+      "rare_characters": 13,
+      "control_characters": 13,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.02",
+      "rare_term": "equicontinuity",
+      "control_term": "administration",
+      "rare_characters": 14,
+      "control_characters": 14,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.03",
+      "rare_term": "diffeomorphism",
+      "control_term": "communications",
+      "rare_characters": 14,
+      "control_characters": 14,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.04",
+      "rare_term": "Noetherian",
+      "control_term": "photograph",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.05",
+      "rare_term": "idempotence",
+      "control_term": "information",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.06",
+      "rare_term": "holonomy",
+      "control_term": "children",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.07",
+      "rare_term": "cohomology",
+      "control_term": "experience",
+      "rare_characters": 10,
+      "control_characters": 10,
+      "exact_length_match": true
+    },
+    {
+      "family": "mathematics.08",
+      "rare_term": "quasiconformal",
+      "control_term": "transportation",
+      "rare_characters": 14,
+      "control_characters": 14,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.01",
+      "rare_term": "sesquialtera",
+      "control_term": "relationship",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.02",
+      "rare_term": "hemiola",
+      "control_term": "picture",
+      "rare_characters": 7,
+      "control_characters": 7,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.03",
+      "rare_term": "isorhythm",
+      "control_term": "different",
+      "rare_characters": 9,
+      "control_characters": 9,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.04",
+      "rare_term": "passacaglia",
+      "control_term": "opportunity",
+      "rare_characters": 11,
+      "control_characters": 11,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.05",
+      "rare_term": "appoggiatura",
+      "control_term": "organization",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.06",
+      "rare_term": "acciaccatura",
+      "control_term": "conversation",
+      "rare_characters": 12,
+      "control_characters": 12,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.07",
+      "rare_term": "mensural",
+      "control_term": "computer",
+      "rare_characters": 8,
+      "control_characters": 8,
+      "exact_length_match": true
+    },
+    {
+      "family": "musicology.08",
+      "rare_term": "tintinnabulation",
+      "control_term": "administration",
+      "rare_characters": 16,
+      "control_characters": 14,
+      "exact_length_match": false
+    }
+  ],
+  "expert_review_complete": false,
+  "notes": [
+    "Frozen v0.1 lexemes and written-frequency annotations retained.",
+    "Core scoring balances domain, term family and condition.",
+    "No training-data absence, causal rarity effect or perceptual validation claim."
+  ]
+}

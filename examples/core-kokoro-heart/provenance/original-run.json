@@ -1,0 +1,36 @@
+{
+  "schema": "rarespeech.run.v1",
+  "version": "0.2.0",
+  "identity": {
+    "corpus_hash": "33ccfa98b1086c188f087a99a3ab6668e8a5523b119cb7d8a10e7e2f83c8b364",
+    "adapter": {
+      "type": "python",
+      "config_hash": "8a350ca1eb16b1d01c77f8ee54b0d0b3a0065e3358726049da22b57f9d469c66",
+      "model": "Kokoro-82M-v1.0-ONNX",
+      "voice": "af_heart",
+      "revision": "weights-sha256:beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+      "parameters": {
+        "voices_sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+        "kokoro_onnx_version": "0.6.1"
+      },
+      "options": {
+        "voice": "af_heart",
+        "language": "en-us",
+        "speed": 1.0,
+        "threads": 2
+      },
+      "seed_supported": false
+    },
+    "model_label": "Kokoro v1.0 ONNX / af_heart",
+    "repeats": 1,
+    "base_seed": 17
+  },
+  "created_utc": "2026-10-12T07:30:49.192751+00:00",
+  "environment": {
+    "python": "3.12.11",
+    "os": "Windows",
+    "machine": "AMD64"
+  },
+  "timing_scope": "wall time per adapter call; no streaming/TTFA claim; startup excluded",
+  "adapter_load_seconds": 2.364006600007997
+}

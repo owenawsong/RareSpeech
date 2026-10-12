@@ -1,0 +1,14 @@
+Original RareSpeech challenge text and authored annotations are licensed under
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+
+Copyright (c) 2026 Owen Song.
+
+License deed: https://creativecommons.org/licenses/by-sa/4.0/
+Legal code: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Attribution: RareSpeech challenge collection v0.1, Owen Song,
+https://github.com/owenawsong/RareSpeech
+
+Third-party frequency estimates are attributed to wordfreq 3.1.1 and retain
+the applicable source/data licensing. The authored corpus license does not
+relicense optional model weights, dictionaries, or reference websites.

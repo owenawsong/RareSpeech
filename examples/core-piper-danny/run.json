@@ -1,0 +1,969 @@
+{
+  "schema": "rarespeech.run.v1",
+  "version": "0.2.0",
+  "identity": {
+    "corpus_hash": "f559cd383f70e35ab8419e7a4698beba2d81cce76369e9b163d4d34b8daf03db",
+    "adapter": {
+      "type": "python",
+      "config_hash": "58df5d3a8bcf2589171d65bb33d57c5670bec64cce727c7d29b71f040bb37795",
+      "model": "piper-en_US-danny-low",
+      "voice": null,
+      "revision": "weights-sha256:56a9ae9499e961514f060aac2866cb323a21e5989592fc4f208e56fdc323ab64",
+      "parameters": {},
+      "options": {},
+      "seed_supported": false
+    },
+    "model_label": "Piper / en_US-danny-low",
+    "repeats": 1,
+    "base_seed": 17
+  },
+  "created_utc": "2026-10-12T07:39:04.262245+00:00",
+  "environment": {
+    "python": "3.12.11",
+    "os": "Windows",
+    "machine": "AMD64"
+  },
+  "timing_scope": "wall time per adapter call; no streaming/TTFA claim; startup excluded",
+  "adapter_load_seconds": 2.9606133999914164,
+  "annotation_correction": {
+    "schema": "rarespeech.annotation-correction.v1",
+    "reason": "Correct inherited variant metadata before first core-v1 publication. Case IDs, synthesis text, targets, recordings and transcripts are unchanged; bare and short-context conditions now have their intended variant labels.",
+    "created_utc": "2026-10-12T08:03:30.612443+00:00",
+    "tool_version": "0.2.0",
+    "source_identity_hash": "0667627b9e03cab6b9d6aeb658720c2d65561c2a739613e0c792b858c56fa7a3",
+    "source_corpus_hash": "33ccfa98b1086c188f087a99a3ab6668e8a5523b119cb7d8a10e7e2f83c8b364",
+    "corrected_corpus_hash": "f559cd383f70e35ab8419e7a4698beba2d81cce76369e9b163d4d34b8daf03db",
+    "source_cases_sha256": "8c90a3ffa5b9627be3a7f44176028f09d9f3d540a25f703bf18695282b9e81f2",
+    "source_run_sha256": "5a13469df86db715e8ae547592af42b4c3a3c2c338d9d3246d7dbec339dfcfd4",
+    "source_files_sha256": {
+      "run.json": "5a13469df86db715e8ae547592af42b4c3a3c2c338d9d3246d7dbec339dfcfd4",
+      "cases.json": "8c90a3ffa5b9627be3a7f44176028f09d9f3d540a25f703bf18695282b9e81f2",
+      "samples.json": "68791c79e995f960cb2dc2d4c9d6e4d04bb0e0d357a6aad4b67fb4ade3719197",
+      "asr-base.en.jsonl": "6c27cd6d2eb55ed8bf2e8a6c1fda7ebc61123e986759f061016b423f4a869c80",
+      "asr-small.en.jsonl": "594102c10fbed9f81103f7ef2645dcde13bb02b911645dd30ddd2ba0c76a5c2a"
+    },
+    "allowed_fields": [
+      "carrier_id",
+      "cluster_id",
+      "condition_label",
+      "control_design",
+      "control_pair",
+      "notes",
+      "track",
+      "variant"
+    ],
+    "changes": [
+      {
+        "case_id": "core.mineralogy.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mineralogy.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.botany.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.manuscripts.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.linguistics.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.zoology.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.astronomy.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.mathematics.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.01.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.02.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.03.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.04.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.05.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.06.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.07.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      },
+      {
+        "case_id": "core.musicology.08.dense",
+        "fields": [
+          "variant"
+        ],
+        "before": {
+          "variant": "isolated"
+        },
+        "after": {
+          "variant": "dense"
+        },
+        "removed": [],
+        "added": []
+      }
+    ],
+    "preserved_samples": 128,
+    "preserved_audio_files": 128,
+    "transcript_files": [
+      "asr-base.en.jsonl",
+      "asr-small.en.jsonl"
+    ],
+    "unverified_failed_audio_not_copied": [],
+    "scope": "Annotation-only correction. Synthesis text/targets, samples and transcript bytes preserved; reports/reviews require fresh evaluation."
+  },
+  "publication": {
+    "status": "full-core automatic baseline; independent listening pending",
+    "scope": "English; original local CPU clips; one generation per case",
+    "selection": "complete core v1, 128 cases",
+    "reviewed": false,
+    "timing_comparable": false
+  }
+}

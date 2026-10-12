@@ -28,15 +28,15 @@ def build_report(report, out: Path, audio_root: Path | None = None):
             row["audio"] = relative
         else:
             row.pop("audio", None)
-    for asset in ("index.html", "style.css", "app.js"):
+    for asset in ("index.html", "style.css", "research.css", "app.js"):
         shutil.copyfile(assets_root() / asset, out / asset)
     write_json(out / "report.json", public)
     # Escape script terminators; never interpolate text as markup in the frontend.
     encoded = json.dumps(public, ensure_ascii=False).replace("<", "\\u003c").replace("\u2028", "\\u2028")
     (out / "data.js").write_text("window.RARESPEECH_DATA=" + encoded + ";\n", encoding="utf-8")
     (out / "model-card.md").write_text(model_card(report), encoding="utf-8")
-    acc = report["summary"]["automatic_accuracy"]
-    label = "incomplete" if acc is None else f"{acc * 100:.1f}% ASR proxy"
+    acc = report.get("research_protocol", {}).get("scores", {}).get("primary_target_retention")
+    label = "withheld" if acc is None else f"{acc * 100:.1f}% balanced ASR proxy"
     import html
 
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="250" height="28" role="img" aria-label="RareSpeech {html.escape(label)}"><rect width="250" height="28" rx="3" fill="#212922"/><rect x="96" width="154" height="28" fill="#2b614a"/><g font-family="Arial,sans-serif" font-size="11" fill="#fff"><text x="48" y="18" text-anchor="middle">RareSpeech</text><text x="173" y="18" text-anchor="middle">{html.escape(label)}</text></g></svg>'
@@ -44,7 +44,11 @@ def build_report(report, out: Path, audio_root: Path | None = None):
 
 
 def model_card(report):
+    from .datasets import track_identity
+
     summary = report["summary"]
+    track = track_identity(report["cases"])
+    balanced = report.get("research_protocol", {}).get("scores", {}).get("primary_target_retention")
     acc = summary["automatic_accuracy"]
     overall = report["totals"].get("all", {})
     wer = overall.get("wer")
@@ -53,9 +57,13 @@ def model_card(report):
         "Rare-content fidelity diagnostics. Automatic values are ASR proxies, not pronunciation ratings.\n",
         "| Measurement | Result |",
         "|---|---|",
-        f"| Target retention (ASR proxy) | {acc * 100:.1f}% |"
+        f"| Track | {track.get('revision', 'custom/subset')} · {len(report['cases'])} cases |",
+        f"| Balanced target retention (ASR proxy) | {balanced * 100:.1f}% |"
+        if balanced is not None
+        else "| Balanced target retention (ASR proxy) | Not eligible / not measured |",
+        f"| Historical macro retention (ASR proxy) | {acc * 100:.1f}% |"
         if acc is not None
-        else "| Target retention (ASR proxy) | Incomplete run — no headline score |",
+        else "| Historical macro retention (ASR proxy) | Incomplete run — no headline score |",
         f"| Rare-content WER | {wer * 100:.1f}% |"
         if wer is not None
         else "| Rare-content WER | Not measured |",
@@ -63,6 +71,9 @@ def model_card(report):
         f"| Human consensus coverage | {report['review_summary']['reviewed']} / {report['review_summary']['required']} targets |",
         "",
         f"Corpus SHA-256: `{report['corpus_hash']}`. Evaluator: RareSpeech {report['version']}.",
+        f"Evaluator source hash: `{report.get('measurement_hash', 'not recorded')}`.",
+        "",
+        "Candidate dataset: expert pronunciation references and acoustic proxy calibration are pending.",
         "",
         "Add your report URL and generation/ASR settings here. Selected subsets are not comparable to full-suite results.",
         "",

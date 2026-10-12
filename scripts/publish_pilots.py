@@ -75,6 +75,7 @@ def main():
                 "name": name,
                 "description": description,
                 "label": "Measured pilot · Whisper small.en",
+                "legacy": True,
             }
         )
     write_json(ROOT / "examples" / "index.json", index)

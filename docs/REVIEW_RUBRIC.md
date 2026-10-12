@@ -2,6 +2,8 @@
 
 Reviewers must understand the language and the term, or establish accepted pronunciations from reliable references. Model identity is visible in the diagnostic report; this is not a blinded listening study.
 
+For independent collection, use `rarespeech study` and share only its listening folder. That packet hides model/source IDs and ASR verdicts; its organizer key stays outside the folder. It still shows reference text and cannot remove recognizable voice characteristics. Preregister reviewer assignment, randomization and adjudication. See [submission workflow](SUBMISSIONS.md) and [validation plan](RESEARCH_PLAN.md).
+
 - **Pass:** this occurrence is present in sequence and pronounced acceptably for the declared language/accent.
 - **Fail:** omitted, substituted, or unmistakably mispronounced under a documented acceptance rule.
 - **Uncertain:** unfamiliar term, ambiguous localization, undocumented legitimate variant, or unclear audio.

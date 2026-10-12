@@ -1,5 +1,7 @@
 RareSpeech code/interface: MIT, Copyright 2026 Owen Song.
 Original challenge text/annotations: CC BY-SA 4.0 (data/LICENSE).
+Author-created synthetic diagnostic audio in examples/: CC BY-SA 4.0.
+Upstream model/voice attribution is recorded in examples/README.md.
 
 Frequency metadata is produced with wordfreq 3.1.1, Robyn Speer and contributors,
 https://github.com/rspeer/wordfreq . wordfreq code is Apache 2.0; distributed

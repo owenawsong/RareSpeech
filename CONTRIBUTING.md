@@ -10,7 +10,9 @@ python -m pip install -e ".[dev,rarity]"
 python -m pytest
 ruff check src scripts examples tests
 python scripts/build_corpus.py
+python scripts/build_core.py
 python scripts/build_site.py
+python scripts/check_release.py
 ```
 
 Corpus changes require a new hash and regeneration of dependent examples.

@@ -1,0 +1,41 @@
+{
+  "schema": "rarespeech.submission.v1",
+  "report_id": "3e56205d5bb89c6c09e980e1dd1401f01db611f204baee8295ddb124c17e26d9",
+  "track": {
+    "name": "core",
+    "revision": "core-v1",
+    "canonical": true,
+    "cases": 128,
+    "corpus_hash": "f559cd383f70e35ab8419e7a4698beba2d81cce76369e9b163d4d34b8daf03db"
+  },
+  "eligible_for_automatic_track_table": true,
+  "blockers": [],
+  "notes": [
+    "Automatic results only; pronunciation consensus is incomplete.",
+    "Canonical tracks remain candidate research collections; this check is not scientific endorsement.",
+    "Software checks do not establish reviewer expertise, acoustic calibration or training-data absence.",
+    "Audio bytes and model weights are not opened here; their declared hashes and revision are not authenticated."
+  ],
+  "evaluator": {
+    "version": "0.2.0",
+    "measurement_hash": "081fc37a558eccdfff2916fcb67994ebf3350dc7718225154906395723158267",
+    "protocol_id": "rarespeech.balanced-primary.v1"
+  },
+  "engines": [
+    "faster-whisper/small.en"
+  ],
+  "recognizer_configuration_hashes": [
+    "5ad6488b9e91354543864cce5257d129cbda3579245cc9e7a97af55fe1ef1b43"
+  ],
+  "measurements": {
+    "primary_target_retention": 0.1875,
+    "all_target_retention": 0.1875
+  },
+  "legacy_target_retention": 0.1875,
+  "observed_recomputed_measurements": {
+    "primary_target_retention": 0.1875,
+    "all_target_retention": 0.1875
+  },
+  "pronunciation_consensus": null,
+  "submission_hash": "c0814eb06f595d20bbfcedff6356185ca8e470b73694c325954a58a60f6d69ef"
+}

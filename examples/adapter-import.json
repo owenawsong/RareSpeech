@@ -1,0 +1,8 @@
+{
+  "type": "import",
+  "model": "MyModel",
+  "voice": "declared-voice",
+  "revision": "replace-with-your-model-file-sha256",
+  "parameters": {"frontend": "record-the-actual-frontend-version"},
+  "seed_supported": false
+}

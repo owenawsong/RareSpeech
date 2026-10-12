@@ -1,127 +1,100 @@
-<p align="center"><img src="assets/hero.svg" alt="RareSpeech — The hard words are the whole point." width="100%"></p>
+<p align="center"><img src="assets/hero.svg" alt="RareSpeech — Long-tail lexical fidelity for text-to-speech" width="100%"></p>
 
-<p align="center"><strong>Find what text-to-speech loses when the words get unfamiliar.</strong><br>Rare terminology. Dense passages. Repeated entries. Evidence you can hear.</p>
+<p align="center"><strong>The rare word can be the whole point of the sentence.</strong><br>Evaluate it explicitly. Report it beside WER. Publish the evidence.</p>
 
-<p align="center"><a href="#try-it">Try it</a> · <a href="docs/QUICKSTART.md">Run your model</a> · <a href="docs/METHODOLOGY.md">Scoring</a> · <a href="data/DATASET_CARD.md">Dataset</a> · <a href="docs/CONTRIBUTING_CASES.md">Contribute</a></p>
+<p align="center"><a href="#quickstart">Quickstart</a> · <a href="docs/TECHNICAL_REPORT.md">Technical report</a> · <a href="docs/BASELINES.md">Measured baselines</a> · <a href="docs/METHODOLOGY.md">Protocol</a> · <a href="docs/SUBMISSIONS.md">Model-card integration</a></p>
 
----
+## What does a low WER leave out?
 
-## A small error can lose the entire point.
+In a thirty-word passage, substituting the one specialist term can produce just **3.3% WER**. The central information may still be lost. Conversely, ASR may reconstruct the intended spelling from incorrectly pronounced audio.
 
-Imagine a 30-word sentence whose one specialist term is spoken incorrectly. A transcript might show only **3.3% WER**—or reconstruct the intended word and conceal the pronunciation error altogether.
+**RareSpeech measures lexical fidelity on uncommon English terms.** It pairs whole-passage WER with balanced retention of precisely anchored rare-word occurrences, inspectable audio and a separate listening-review protocol.
 
-RareSpeech makes those important occurrences inspectable. Generate or import audio, align transcripts, inspect each target, and open the evidence in an offline report. Listen, record judgments, and compare checkpoints.
+> **Research status:** v0.2 is working evaluation software with a candidate collection and measured open-model baselines. Automatic retention is an **ASR proxy**, not pronunciation accuracy. Expert pronunciation references and independent acoustic calibration remain pending. This is not a universal TTS-quality leaderboard.
 
-**The question:** how faithfully does your TTS pipeline deliver uncommon content?
+## A defined benchmark with a complete evaluation pathway
 
-> **v0.1 status:** working evaluation software with an authored **candidate** collection. Automatic scores are ASR proxies. Expert pronunciation validation is pending. Bundled measured examples are integration pilots, not a human-quality leaderboard.
-
-## What you get
-
-| | |
+| Layer | Included |
 |---|---|
-| **320 cases / 8 domains** | 64 term families, with written-frequency evidence and exact target offsets. |
-| **Five conditions** | Isolated, dense, confusable, extended, and familiar-text controls. |
-| **Bring your model** | Python adapters, shell-free commands, speech endpoints, or existing WAV folders. |
-| **Inspect each occurrence** | Missing, substituted, and repeated content remains visible alongside whole-passage WER. |
-| **Hear the evidence** | Audio, waveforms, alignment, category tables, and review queues in an offline report. |
-| **Review separately** | Pass/fail/uncertain decisions with audio-bound provenance and consensus coverage. |
-| **Compare releases** | Corpus/audio hashes, evaluator versions, checkpoint diffs, and family-bootstrap intervals where supported. |
-| **Share the result** | Exportable JSON and a generated model-card Markdown table. |
+| **Core v1** | 128 cases: 64 specialist term families, eight domains, bare and short-context conditions. |
+| **Stress v1** | 192 cases: repeated occurrences, longer contexts and documented familiar controls. |
+| **Frozen history** | Original v0.1 corpus and measured integration pilots remain reproducible. |
+| **Balanced analysis** | Equal domain / family / condition weighting; controls stay separate. |
+| **Careful uncertainty** | Paired lexical-dependency bootstrap; unsupported intervals are withheld. |
+| **Bring your pipeline** | Persistent Python adapters, shell-free commands, speech APIs or generated WAVs. |
+| **Inspectable evidence** | Original audio, target alignment, WER, condition/category breakdowns and recognizer disagreement. |
+| **Independent review** | Randomized listening packets with model/source IDs and ASR verdicts concealed. |
+| **Model-card output** | Frozen-track checks, provenance, submission JSON, Markdown tables and an ASR-proxy badge. |
 
-<p align="center"><img src="assets/report-preview.png" alt="Measured Inflect Nano pilot: whole-passage WER beside rare-target retention, coverage, and domain diagnostics." width="100%"></p>
+<p align="center"><img src="assets/recognizer-sensitivity.svg" alt="Actual core-v1 lexical retention differs between Whisper small.en and base.en on the same recordings; neither is verified pronunciation accuracy" width="100%"></p>
 
-<p align="center"><sub>Actual 32-case integration pilot. ASR-derived diagnostics; pronunciation review pending.</sub></p>
-
-### How far into the long tail?
+### The long tail, with its source attached
 
 **Mineralogy · Botany · Manuscript studies · Linguistics · Zoology · Astronomy · Mathematics · Musicology**
 
-Explore **omphacite**, **anaptyxis**, **opisthograph**, **pterygopodium**, and **sesquialtera**. Rarity estimates and uncertainty labels travel with the cases. Below a frequency list’s coverage does not mean a word never occurs or was absent from training.
+`omphacite` · `anaptyxis` · `opisthograph` · `pterygopodium` · `sesquialtera`
 
-Carrier text is original. Terms are candidate lexemes; dictionary links are discovery aids, not completed expert pronunciation reviews. Read the [dataset card](data/DATASET_CARD.md).
+Every occurrence has exact character offsets, a lexical source link and frequency provenance. Zipf zero means below the frequency list's coverage; it does not prove absence from training. Terms still await expert acoustic acceptance rules. [Dataset card →](data/DATASET_CARD.md)
 
-## Try it
+## Quickstart
 
-Python 3.10+. **No runtime dependencies for the core.** Run from the repository root so the dataset and example integrations are available.
+Python 3.10+. Core scoring and report generation have **no third-party runtime dependencies**. Datasets and report assets are included in the Python package.
 
 ```bash
 git clone https://github.com/owenawsong/RareSpeech.git
 cd RareSpeech
 python -m pip install -e .
 rarespeech validate
+rarespeech corpus-audit --out audit.json
 python scripts/build_site.py
 rarespeech serve site
 ```
 
-Open **http://127.0.0.1:8765**. Explore the collection and real audio examples. The static site does not run models or upload your data.
+Open **http://127.0.0.1:8765**. The dataset explorer and evidence reports run locally without a cloud judge, telemetry or remote fonts.
 
-### Test your model
+### Evaluate your model
 
-**One command from speech to an inspectable report:**
+Configure an [adapter](examples/README.md), then run:
 
 ```bash
 python -m pip install -e ".[asr]"
-rarespeech benchmark --adapter examples/adapter-api.json --model-label MyModel --variant isolated --limit 8 --out runs/quickstart
-rarespeech serve runs/quickstart/report
+rarespeech benchmark --adapter adapter.json --model-label MyModel --out runs/model
+rarespeech serve runs/model/report
+rarespeech submission --report runs/model/report/report.json --out submissions/model
 ```
 
-Requires a working configured TTS endpoint. Omit the selection flags for the full collection. Each stage is also available separately:
+The default is the complete core track. `--track stress` selects stress cases; `--track legacy` reproduces the original collection. `--variant isolated --limit 8` makes a quick diagnostic subset, explicitly ineligible as a full-track result. ASR downloads its model on first use. TTS dependencies and model weights are separate.
 
-Use [an adapter](examples/) or import your audio. For a working local OpenAI-compatible TTS server:
+Already have audio? Use `rarespeech import-audio`. Already have transcripts? Use hash-bound JSONL and skip recognizer installation. [Complete instructions →](docs/QUICKSTART.md)
+
+### Compare and review
 
 ```bash
-rarespeech generate --adapter examples/adapter-api.json --model-label MyModel --variant isolated --limit 8 --out runs/my-model
-python -m pip install -e ".[asr]"
-rarespeech transcribe --run runs/my-model --out runs/my-model/asr.jsonl
-rarespeech evaluate --run runs/my-model --transcripts runs/my-model/asr.jsonl --out runs/my-model/report.json
-rarespeech report runs/my-model/report.json --audio-root runs/my-model --out reports/my-model
-rarespeech serve reports/my-model
+rarespeech compare reports/baseline/report.json reports/candidate/report.json --out comparison.json
+rarespeech study --reports reports/baseline/report.json reports/candidate/report.json --out study
+rarespeech serve study
 ```
 
-The example endpoint is `http://127.0.0.1:8880/v1/audio/speech`; supply a server or change the adapter. ASR downloads a Whisper model on first use. Model dependencies and compute are separate from the toolkit.
+Comparisons require identical corpora, repeats, evaluator and recognizer configurations. Listening packets preserve original audio hashes while masking source identities. Keep the organizer key outside the shared packet; exported decisions can be restored with `rarespeech unblind`. [Submission and listening workflow →](docs/SUBMISSIONS.md)
 
-Already have speech? Use `rarespeech import-audio`. Already have transcripts? Supply [hash-bound JSONL](docs/QUICKSTART.md#bring-your-own-transcripts) and skip ASR installation.
+## Results you can inspect
 
-```bash
-rarespeech compare reports/baseline/report.json reports/candidate/report.json --out changes.json
-```
+The [baseline appendix](docs/BASELINES.md) reports measured configurations, not a best-model claim. Every bundled core result includes source audio, immutable weights identity, recognizer settings and a second-recognizer audit. Historical author-model examples live in the appendix rather than defining the benchmark.
 
-Compare identical selected corpora and repeat IDs with the same ASR setup. Confirm apparent regressions by listening.
+Missing generations, missing transcripts and never-generated declared repeats cannot silently improve a score. Blank transcripts count as failures. Mixed recognizer settings block a comparable aggregate. Human consensus remains a separate measurement; distinct pseudonyms alone do not prove expertise or independence.
 
-## A score with its workings attached
+## Research and contributions
 
-**Automatic target retention** is the category-macro average of aligned target matches. It is not verified pronunciation accuracy or MOS. Whole-passage WER is shown separately.
+- [Technical report](docs/TECHNICAL_REPORT.md): question, design, score and limitations.
+- [Measurement protocol](docs/METHODOLOGY.md): normalization, aggregation, uncertainty and provenance.
+- [Validation plan](docs/RESEARCH_PLAN.md): expert lexical review, reference recordings and listening-study requirements.
+- [Contributing cases](docs/CONTRIBUTING_CASES.md): documented terms and defensible acceptance rules.
+- [Contributing code](CONTRIBUTING.md): adapters, independent reproductions, tests and report improvements.
 
-Missing audio/transcripts stay visible; incomplete runs receive no complete-suite headline. Blank transcripts count as errors. Controls are excluded from the main score and do not establish a causal rarity penalty.
+RareSpeech complements existing evaluation work, including [EmergentTTS-Eval](https://github.com/boson-ai/EmergentTTS-Eval-public) and [Open TTS Eval](https://github.com/inworld-ai/open-tts-eval). It does not claim to be the first rare-word or difficult-input benchmark.
 
-**Human-reviewed accuracy** requires consensus from two distinct raters for every non-control target. Uncertain and conflicting decisions remain unresolved. Reviewer independence and expertise still need to be established by the study organizer.
+## License and citation
 
-The browser saves decisions locally and exports JSONL. The CLI checks report identity, audio hash, target ID, and duplicate reviewers before merging them. [Read the protocol →](docs/METHODOLOGY.md)
+Software/interface: [MIT](LICENSE). Original collection, annotations and author-created synthetic examples: [CC BY-SA 4.0](data/LICENSE), including frequency-derived metadata; see [NOTICE](NOTICE) and [audio attribution](examples/README.md#source-and-audio-notices). Optional models and dependencies retain their own licenses. Model weights are not redistributed.
 
-## Built to be inspected
-
-- No cloud judge, analytics, remote fonts, or required hosted service.
-- Commands run as argument arrays without shell expansion.
-- API credentials come from environment variables.
-- Resume rejects changed run identities; audio hashes invalidate stale transcripts and reviews.
-- Bootstrap resampling keeps term families together.
-- Reports include original WAVs and machine-readable results.
-
-## Help make the hard cases defensible
-
-Contribute documented rare terms, accepted pronunciations, varied carrier passages, qualified listening reviews, or reproducible failures. Model adapters are welcome too.
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [case checklist](docs/CONTRIBUTING_CASES.md). Each challenge needs a reason to exist and a clear acceptance rule.
-
-### Related work
-
-[TTSProof](https://github.com/Mormolykos/ttsproof), [tts-bench](https://github.com/5uck1ess/tts-bench), [Open TTS Eval](https://github.com/inworld-ai/open-tts-eval), and [EmergentTTS-Eval](https://github.com/boson-ai/EmergentTTS-Eval-public) already cover important evaluation layers. [Semantically unpredictable sentence research](https://www.isca-archive.org/sioa_1989/hazan89_sioa.html) informs low-predictability carriers. RareSpeech does not claim to be the first stress or rare-word benchmark.
-
-## License & citation
-
-Code/interface: [MIT](LICENSE). Original challenge text/annotations: [CC BY-SA 4.0](data/LICENSE). Dependencies and optional models keep their own licenses. Frequency metadata uses [wordfreq](https://github.com/rspeer/wordfreq); see [NOTICE](NOTICE).
-
-[CITATION.cff](CITATION.cff) provides software citation metadata. This is not a peer-reviewed paper.
-
-Built by [Owen Song](https://github.com/owenawsong), a student developer working on speech models and useful ML software. Inflect is my own model; its examples use the same evaluator and disclose that relationship.
+Use [CITATION.cff](CITATION.cff). The technical report is software documentation, not a peer-reviewed paper. Built by [Owen Song](https://github.com/owenawsong), a student developer. The author maintains Inflect; that relationship is disclosed in its historical examples.

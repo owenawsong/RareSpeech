@@ -1,7 +1,7 @@
 {
   "schema": "rarespeech.asr-audit.v1",
-  "left": "bca76ab8004cf557daae4ae73391f5abdb1cf4691cbc5c6588062c1d7b531274",
-  "right": "854dc69be4d6fc557d1241b39799d1a10fc66a47056875f8ec56648a370207ec",
+  "left": "cec1cc2299a2dc521236aae6d0875acf5cb36b4a5168d5f6db4cb4eb94884c28",
+  "right": "50056f8dd57460940a05a0c608d23a76200e5011ddc955498baddf74556890e6",
   "disagreements": [
     {
       "sample_id": "mineralogy.01.extended--r1",
@@ -88,5 +88,11 @@
       "right_retained": true
     }
   ],
+  "coverage": {
+    "paired_scored_samples": 32,
+    "expected_samples": 32,
+    "paired_targets": 80
+  },
+  "disagreement_rate": 0.15,
   "note": "Recognizer disagreement; neither side establishes correct pronunciation."
 }

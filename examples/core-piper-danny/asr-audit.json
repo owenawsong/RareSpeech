@@ -1,0 +1,147 @@
+{
+  "schema": "rarespeech.asr-audit.v1",
+  "left": "3e56205d5bb89c6c09e980e1dd1401f01db611f204baee8295ddb124c17e26d9",
+  "right": "7e4b9fd3a92906c01301dd1e0c9172c3a384ed5019f8fda9608298d42c53305e",
+  "disagreements": [
+    {
+      "sample_id": "core.mineralogy.05.dense--r1",
+      "target_id": "t1",
+      "text": "lawsonite",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "core.mineralogy.07.isolated--r1",
+      "target_id": "t1",
+      "text": "serpentinite",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.mineralogy.08.isolated--r1",
+      "target_id": "t1",
+      "text": "eclogite",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "core.mineralogy.08.dense--r1",
+      "target_id": "t1",
+      "text": "eclogite",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.botany.03.dense--r1",
+      "target_id": "t1",
+      "text": "phyllotaxis",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.botany.05.dense--r1",
+      "target_id": "t1",
+      "text": "peltate",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "core.manuscripts.07.dense--r1",
+      "target_id": "t1",
+      "text": "codicology",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.manuscripts.08.isolated--r1",
+      "target_id": "t1",
+      "text": "opisthographic",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.linguistics.01.dense--r1",
+      "target_id": "t1",
+      "text": "haplology",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.linguistics.03.dense--r1",
+      "target_id": "t1",
+      "text": "epenthesis",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.astronomy.04.dense--r1",
+      "target_id": "t1",
+      "text": "syzygy",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.astronomy.05.dense--r1",
+      "target_id": "t1",
+      "text": "saros",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.astronomy.06.dense--r1",
+      "target_id": "t1",
+      "text": "selenographic",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.mathematics.01.dense--r1",
+      "target_id": "t1",
+      "text": "homeomorphism",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.mathematics.02.isolated--r1",
+      "target_id": "t1",
+      "text": "equicontinuity",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.mathematics.02.dense--r1",
+      "target_id": "t1",
+      "text": "equicontinuity",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.mathematics.04.dense--r1",
+      "target_id": "t1",
+      "text": "Noetherian",
+      "left_retained": true,
+      "right_retained": false
+    },
+    {
+      "sample_id": "core.mathematics.07.dense--r1",
+      "target_id": "t1",
+      "text": "cohomology",
+      "left_retained": false,
+      "right_retained": true
+    },
+    {
+      "sample_id": "core.musicology.04.dense--r1",
+      "target_id": "t1",
+      "text": "passacaglia",
+      "left_retained": true,
+      "right_retained": false
+    }
+  ],
+  "coverage": {
+    "paired_scored_samples": 128,
+    "expected_samples": 128,
+    "paired_targets": 128
+  },
+  "disagreement_rate": 0.1484375,
+  "note": "Recognizer disagreement; neither side establishes correct pronunciation."
+}

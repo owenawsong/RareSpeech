@@ -1,55 +1,61 @@
-# Measurement protocol · v0.1
+# Measurement protocol · v0.2
 
-## Scope
+## Scope and frozen tracks
 
-RareSpeech measures content retention on authored English specialist-text challenges. The collection is a candidate release without expert pronunciation validation. It does not establish training-data absence, naturalness, universal TTS quality, or a population listening-study ranking. The bundled pilots test complete inference pipelines, including frontends and chunking. They cannot identify the internal cause of an observed error. Inflect is maintained by this project’s author.
+Capture files are immutable evidence. An annotation-only correction uses `rarespeech.reannotate.reannotate(source, corrected_cases, out, reason)` into a new empty directory. It permits only explicit design metadata, verifies unchanged synthesis text/targets, audio and transcript bytes, and retains originals and changed fields. Derived reports and reviews must be recomputed; a changed corpus has a new identity. This tool does not permit correcting measured failures by changing reference text.
 
-## Rarity and corpus
+RareSpeech evaluates a complete TTS pipeline's lexical content on curated English specialist terms. Automatic values are ASR proxies. The candidate collection does not yet have expert acoustic acceptance rules or validated recognizer calibration. It does not infer training-data absence, assign naturalness scores or certify universal TTS quality.
 
-Eight equally represented domains, 64 primary term families, five conditions per family. Frequency metadata uses wordfreq 3.1.1’s large English list: Zipf <1.5 extreme, 1.5–2.5 rare. Zero is below coverage, not measured absence. Written frequency is not spoken frequency or known training exposure. Neighboring targets in dense passages do not have individual frequency metadata in this release.
+**Core v1:** 128 cases, 64 primary term families, eight domains; bare terms and short neutral carriers. **Stress v1:** 192 cases; repetition, long context and familiar controls. **Legacy v0.1:** the original 320-case collection, kept separately. Package defaults select core. Track identification uses exact corpus hashes; subsets cannot claim full-track results.
 
-Carrier templates repeat. Passages are index readouts, not scientific assertions. Familiar controls repeat the isolated carrier with “garden”; they are not word-length-matched causal controls and cannot establish a rarity penalty. Controls are excluded from the headline.
+The core/stress lexemes and wordfreq 3.1.1 annotations are retained from the original collection. Core cases contain one primary occurrence, with no cross-family neighbor targets. Explicit morphology clusters group related derivations. There are 63 declared lexical clusters, not proof of statistical independence over a population. Sixteen short carrier templates are shared. Core control-pair IDs reference cases in the separate stress track; an audit of core alone reports them unavailable within that selected track.
 
-## References
+## Rarity and controls
 
-Each occurrence has exact character offsets and a stable target ID. Explicit `spoken_forms` can provide documented lexical expansions only for that span. No spelling correction, inferred synonyms, fuzzy matching, or LLM repair.
+Wordfreq large English Zipf estimates below 1.5 are labeled extreme, 1.5–2.5 rare. Zero means below list coverage, not a measured absence. Written frequency is not spoken frequency or model exposure. Dictionary-entry existence is checked; acoustic pronunciation acceptance is pending.
 
-Normalization: Unicode NFKC, case folding, punctuation-boundary tokenization, internal apostrophes retained. Diacritics and numbers remain. Hyphens split compounds. Contractions and number readings are not automatically expanded. Acoustic distinctions can be concealed by transcription; target retention is therefore a proxy.
+New familiar controls match written character length where the documented control lexicon permits; nearest-length alternatives and actual differences are recorded. They share the corresponding short carrier. Phonemes, stress, meaning and spoken duration are not matched, so differences do not establish a causal rarity effect. Controls are excluded from rare-target aggregates. Legacy controls reuse “garden” and were not length matched.
 
-## Automatic metrics
+## Anchors and normalization
 
-Deterministic Levenshtein alignment tie policy: diagonal match/substitution, deletion, insertion. Select the authored alias combination with minimum edit count (up to 64 combinations). Alignment is bounded to four million cells.
+Each occurrence has a stable target ID and exact character offsets. Explicit `spoken_forms` can supply documented lexical expansions for that span; there is no inferred synonym, fuzzy spelling correction or LLM repair.
 
-WER = (substitutions + deletions + insertions) / reference tokens, micro-aggregated within each reported group. It may exceed 100%. Target retention requires all reference tokens in the designated span to match identical hypothesis tokens. Insertions inside/around a span affect WER but need not invalidate retention. Repeated text can have multiple optimum alignments; deterministic localization is not proof of the actual missing occurrence.
+Unicode NFKC and case folding are applied; punctuation defines boundaries, internal apostrophes remain, diacritics and numeric values are preserved. Hyphens split compounds. Number readings and contractions are not automatically expanded. Deterministic minimum-edit alignment prefers diagonal match/substitution, then deletion, then insertion. Alias combinations are bounded at 64, alignments at four million cells.
 
-The headline is the equal-category mean of retained/scored targets, excluding controls. Dense/extended cases contribute more target occurrences within a category. Missing audio/transcripts withhold the complete-suite headline; observed scored-subset values are separate. Blank transcripts are scored failures. Do not silently exclude unavailable measurements or replace them with zero.
+Repeated text may have several optimal alignments. Deterministic localization is not proof of the acoustic occurrence that failed. Insertions affect WER without necessarily invalidating a target whose reference tokens all match.
 
-## Uncertainty
+## Automatic measurements
 
-Resample term families within each category, keeping variants/repeats together, 1,000 draws with seed 17. Report percentile 2.5/97.5 endpoints only if every scored category has at least two families. This estimates variation under that design, not recognizer bias, human-review uncertainty or generalization to all rare speech. The one-family-per-domain pilots have no interval.
+WER = (substitutions + deletions + insertions) / reference tokens; it can exceed 100%. Group WER micro-aggregates errors and reference tokens. Each target occurrence is retained only when all its aligned reference tokens match.
 
-## Recognizer confounds
+**Balanced primary-target retention** averages occurrences within generation, generations within case, cases within condition, conditions within family, families within domain, then domains equally. Neighbor-inclusive retention is separate. The historical headline averages occurrence retention equally across domains and is retained under its original meaning. Do not silently substitute one protocol for another.
 
-ASR can reject valid rare speech or reconstruct incorrectly spoken words. Multiple recognizers are a disagreement detector, not ground truth. Do not prime the main ASR with target vocabulary. Record model/revision, precision/device, decoding, VAD and context settings. Human reference recordings and qualified reviews of both apparent failures and successes are needed to validate the proxy. This release does not claim that calibration is complete.
+An incomplete declared design gets no complete aggregate. Missing generations, missing transcripts and never-generated declared repeats stay visible. Blank transcripts are scored failures. Mixed recognizer configurations withhold comparable headlines. Observed scored-subset values are separate.
 
-## Human review
+## Uncertainty and paired comparisons
 
-Per-target pass/fail/uncertain under the presence-plus-pronunciation rubric. Decisions bind to report ID, sample, audio hash, target and rater pseudonym. Two distinct pseudonyms must agree, without uncertain/conflicting votes. Pseudonyms do not prove independence or expertise. Only complete consensus coverage produces a verified headline. Disputes stay unresolved until auditable adjudication replaces previous decisions.
+Connected lexical families form bootstrap clusters; explicit `cluster_id` values also link families. Resampling is category-stratified with 1,000 draws and seed 17. Percentile endpoints are at 2.5/97.5%. There must be at least two clusters per category for an interval. Related samples and repeats remain together.
 
-The diagnostic report exposes model identity and ASR results. This is not a blinded preference arena. For a research listening study, use a separately randomized, blinded protocol with qualified listeners.
+The legacy dense neighbors connect all families within each domain, leaving one cluster per domain. Its previous family-only interval was overconfident and is now withheld. Paired analysis resamples the same clusters on both sides and reports candidate minus baseline. Corpus, evaluator source, ASR settings and sample/repeat assignment must match. Intervals describe variation within the specified collection; they do not address ASR bias, reviewer error or generalization to all rare language.
 
-## Generation and provenance
+## Recognizer provenance and confounds
 
-Persistent Python adapters load once; command adapters may cold-load per call. Wall time covers the adapter call and file writing, excludes factory startup, and is not TTFA, a memory measurement or a comparable speed ranking. Imported audio has no timing. Declare immutable model revision, voice, actual seed support, frontend and effective synthesis parameters. Seeds do not ensure bitwise reproducibility.
+The default ASR uses small.en, CPU int8, beam size 5, temperature zero, no VAD, no previous-text conditioning and no vocabulary prompt. Actual model.bin/config.json SHA-256 values, library versions, precision/device and decoding settings are recorded. Custom local recognizer paths are labeled without publishing private directories. A second recognizer measures paired disagreement, not ground truth.
 
-Corpus SHA-256 covers selected cases sorted by ID. Run identity covers corpus, adapter hash, model label, repeats and seed. Each successful WAV is hashed. Transcripts/reviews must match it. Report identity covers corpus, samples and transcripts. Public configs omit local paths/commands and inline credentials are rejected. Custom adapters execute with the user’s privileges.
+ASR may reject correct rare speech or reconstruct incorrectly pronounced words. Human reference recordings and qualified adjudication of successes and failures are required to calibrate the proxy. This release does not claim that work is complete.
 
-Checkpoint comparisons require identical selected corpus and repeat IDs. Different ASR settings are a confound. Never compare subsets with full-suite scores or silently change normalization/reference rules.
+## Listening review
 
-## Related work
+Randomized packets hide model names, original sample/report IDs, generation settings and ASR verdicts. An organizer-only key is written outside the participant directory. The reference passage is visible and listeners may recognize voices. This is not a guarantee of complete perceptual blinding or a naturalness preference arena.
 
-- [TTSProof](https://github.com/Mormolykos/ttsproof): difficult-input failure diagnostics.
-- [Open TTS Eval](https://github.com/inworld-ai/open-tts-eval): reproducible metrics and ASR limitations.
-- [ASR evaluation confidence intervals](https://www.isca-archive.org/interspeech_2021/taylor21_interspeech.html).
-- [Semantically unpredictable sentences](https://www.isca-archive.org/sioa_1989/hazan89_sioa.html).
-- [wordfreq](https://github.com/rspeer/wordfreq): written-frequency estimates.
+Decisions use pass/fail/uncertain under the presence-plus-pronunciation rubric and bind to exact audio and target IDs. Identity is restored with `unblind`; two distinct raters must agree for consensus. Uncertain/conflicting votes remain unresolved. Only complete consensus yields pronunciation aggregates. Distinct pseudonyms, playback events and agreeing votes do not establish independent expert judgment. Reviewer names are normalized for duplicate detection. [Study workflow](SUBMISSIONS.md).
+
+## Generation, reporting and submission
+
+Persistent Python adapters load once; shell-free command adapters may reload each invocation. Adapter-call wall time excludes factory load and is not streaming TTFA, memory measurement or a comparable speed ranking. Imported audio has no synthesis timing. Record immutable model identity, voice, frontend and effective parameters. Seeds do not guarantee reproducibility; unsupported seeds are declared.
+
+Selected cases, audio, transcript identity and evaluator source are hash bound. Public adapter configurations omit local paths/commands and reject inline credentials. Custom adapters execute with user privileges. Reports are portable local assets without telemetry.
+
+Submission checks recompute measurements and verify bindings, coverage, canonical track, implementation version, immutable model identity, fixed recognizer settings and recognizer weights/configuration fingerprints. Passing these checks is not scientific endorsement. Rejected submissions suppress headline measurements while exposing separately labeled reconstructed observations.
+
+See [the technical report](TECHNICAL_REPORT.md), [baseline appendix](BASELINES.md) and [external validation plan](RESEARCH_PLAN.md).

@@ -1,5 +1,7 @@
 # Publish a software release
 
+See [preparation evidence](VERIFICATION.md) for the checks performed on v0.2. The checklist below is intended to be repeated for each release.
+
 ## Reproduce the gates
 
 ```bash
@@ -7,7 +9,9 @@ python -m pip install -e ".[dev,rarity]"
 python -m pytest
 ruff check src scripts examples tests
 python scripts/build_corpus.py
+python scripts/build_core.py
 python scripts/build_site.py
+python scripts/check_release.py
 python -m build
 ```
 

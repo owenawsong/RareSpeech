@@ -112,11 +112,20 @@ def macro_accuracy(rows: list[dict]) -> float | None:
 
 
 def bootstrap(rows: list[dict], samples=1000, seed=17):
-    # Resample term families together: variants/repeats are not independent evidence.
+    # Resample connected lexical families: dense neighbors make nominal families dependent.
+    if type(samples) is not int or samples < 2:
+        raise ValueError("bootstrap samples must be an integer >= 2")
+    from .audit import dependency_clusters
+
+    cases = {r["case"]["id"]: r["case"] for r in rows if r.get("case")}
+    design = dependency_clusters(list(cases.values())) if cases else None
+    if design and not design["interval_eligible"]:
+        return None
     categories = {}
     for row in rows:
         if row["variant"] != "control" and row.get("metrics"):
-            categories.setdefault(row["category"], {}).setdefault(row["family_id"], []).append(row)
+            cluster = design["family_to_cluster"][row["family_id"]] if design else row["family_id"]
+            categories.setdefault(row["category"], {}).setdefault(cluster, []).append(row)
     if not categories or any(len(families) < 2 for families in categories.values()):
         return None
     rng = random.Random(seed)

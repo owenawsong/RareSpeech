@@ -1,0 +1,16 @@
+{
+  "type": "python",
+  "factory": "rarespeech.integrations:kokoro_onnx",
+  "model": "Kokoro-82M-v1.0-ONNX",
+  "voice": "af_heart",
+  "revision": "replace-with-your-model-file-sha256",
+  "seed_supported": false,
+  "options": {
+    "model_path": "models/kokoro-v1.0.onnx",
+    "voices_path": "models/voices-v1.0.bin",
+    "voice": "af_heart",
+    "language": "en-us",
+    "speed": 1.0,
+    "threads": 2
+  }
+}

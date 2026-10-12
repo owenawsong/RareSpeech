@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from .corpus import corpus_hash, load_cases, select
+from .datasets import dataset_path
 from .evaluate import audit_asr, compare, evaluate, merge_reviews
 from .io import file_hash, read_jsonl, safe_child, unique, write_json, write_jsonl
 from .report import build_report
@@ -15,12 +16,15 @@ from .report import build_report
 
 def parser():
     p = argparse.ArgumentParser(description="RareSpeech — inspect what TTS loses when words get unfamiliar.")
-    p.add_argument("--version", action="version", version="RareSpeech 0.1.0")
+    p.add_argument("--version", action="version", version="RareSpeech 0.2.0")
     sub = p.add_subparsers(dest="action", required=True)
-    for name in ("validate", "export", "generate", "import-audio", "benchmark"):
+    for name in ("validate", "corpus-audit", "export", "generate", "import-audio", "benchmark"):
         s = sub.add_parser(name)
-        s.add_argument("--corpus", type=Path, default=Path("data/challenge-v1.jsonl"))
-        if name != "validate":
+        s.add_argument("--corpus", type=Path)
+        s.add_argument("--track", choices=["core", "stress", "legacy"], default="core")
+        if name == "corpus-audit":
+            s.add_argument("--out", type=Path)
+        elif name != "validate":
             s.add_argument("--category")
             s.add_argument("--variant")
             s.add_argument("--limit", type=int)
@@ -39,6 +43,7 @@ def parser():
             s.add_argument("--asr-compute", default="int8")
         if name == "import-audio":
             s.add_argument("--audio-dir", type=Path, required=True)
+            s.add_argument("--provenance", type=Path, help="JSON adapter identity only; never executed")
     s = sub.add_parser("transcribe")
     s.add_argument("--run", type=Path, required=True)
     s.add_argument("--out", type=Path, required=True)
@@ -66,6 +71,17 @@ def parser():
     s.add_argument("input", type=Path)
     s.add_argument("--out", type=Path, required=True)
     s.add_argument("--audio-root", type=Path)
+    s = sub.add_parser("submission")
+    s.add_argument("--report", type=Path, required=True)
+    s.add_argument("--out", type=Path, required=True)
+    s = sub.add_parser("study")
+    s.add_argument("--reports", type=Path, nargs="+", required=True)
+    s.add_argument("--out", type=Path, required=True)
+    s.add_argument("--seed", type=int, default=17)
+    s = sub.add_parser("unblind")
+    s.add_argument("--key", type=Path, required=True)
+    s.add_argument("--decisions", type=Path, required=True)
+    s.add_argument("--out", type=Path, required=True)
     s = sub.add_parser("serve")
     s.add_argument("directory", type=Path)
     s.add_argument("--port", type=int, default=8765)
@@ -79,6 +95,33 @@ def load_json(path):
 def main():
     args = parser().parse_args()
     try:
+        if hasattr(args, "corpus") and args.corpus is None:
+            args.corpus = dataset_path(args.track)
+        if args.action == "corpus-audit":
+            from .audit import audit_corpus
+
+            value = audit_corpus(load_cases(args.corpus))
+            if args.out:
+                write_json(args.out, value)
+            else:
+                print(json.dumps(value, indent=2))
+            return
+        if args.action == "submission":
+            from .submission import submission
+
+            value = submission(load_json(args.report), args.out)
+            print(json.dumps({"eligible": value["eligible_for_automatic_track_table"], "blockers": value["blockers"]}))
+            return
+        if args.action == "study":
+            from .study import build_study
+
+            print(json.dumps(build_study(args.reports, args.out, args.seed)))
+            return
+        if args.action == "unblind":
+            from .study import unblind
+
+            print(json.dumps(unblind(args.key, read_jsonl(args.decisions), args.out)))
+            return
         if args.action == "benchmark":
             from .pipeline import benchmark
 
@@ -130,6 +173,7 @@ def main():
             else:
                 import shutil
 
+                from .adapters import public_config
                 from .audio import inspect_audio
 
                 if args.out.exists() and any(args.out.iterdir()):
@@ -159,7 +203,9 @@ def main():
                     args.out / "run.json",
                     {
                         "schema": "rarespeech.run.v1",
-                        "identity": {"model_label": args.model_label, "corpus_hash": corpus_hash(cases)},
+                        "identity": {"model_label": args.model_label, "corpus_hash": corpus_hash(cases),
+                                     "repeats": 1,
+                                     "adapter": public_config(load_json(args.provenance)) if args.provenance else {}},
                         "timing_scope": "imported audio; inference performance not measured",
                     },
                 )

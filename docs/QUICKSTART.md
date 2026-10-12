@@ -1,104 +1,103 @@
 # Run your model
 
-Python 3.10+. Run from the repository root. Core scoring has no external dependencies. Use an isolated environment for optional TTS/ASR dependencies.
+Python 3.10+ for the dependency-free evaluator. Python 3.12 is the tested optional TTS/ASR environment. Work in an isolated environment.
 
 ```bash
 python -m venv .venv
 # Windows: .venv\Scripts\activate
-# Linux/macOS: source .venv/bin/activate
-python -m pip install -e .
+# macOS/Linux: source .venv/bin/activate
+python -m pip install -e ".[asr]"
 rarespeech validate
+rarespeech corpus-audit --out audit.json
 ```
 
-## Select cases
+The installed wheel includes the datasets and report UI. Commands default to **core v1**, even outside the checkout. `--track stress` and `--track legacy` select the other frozen tracks. `--corpus custom.jsonl` overrides the track; subsets have different identities and cannot be advertised as canonical core results.
 
-```bash
-rarespeech export --category mineralogy --variant isolated --out prompts.jsonl
-```
+## 1. Connect a synthesizer
 
-`--limit` selects the first N matching cases, not a random sample. To evaluate a balanced subset, make a JSONL corpus explicitly and supply `--corpus` to generation/import. Each selection has its own hash.
-
-## Generate
-
-Copy an example adapter and update its model paths/settings. Commands are JSON argument arrays; no shell expansion happens. `{text}`, `{text_file}`, `{output}`, and `{seed}` are literal placeholders. Standard input also receives the text. Never put credentials in argv.
+Copy [an adapter example](../examples/) and record the immutable model revision, voice, decoding settings and seed support. Weights are not included. Choose a Python factory, a command, an OpenAI-compatible WAV endpoint, or import recordings.
 
 ```json
-{"type":"command","argv":["my-tts","--input","{text_file}","--output","{output}"],"model":"my-model","revision":"checkpoint-sha256","seed_supported":false}
+{"type":"command","argv":["my-tts","--input","{text_file}","--output","{output}"],"model":"my-model","revision":"weights-sha256:ACTUAL_SHA256","seed_supported":false}
 ```
+
+Commands are argument arrays, with no shell expansion. `{text}`, `{text_file}`, `{output}` and `{seed}` are literal substitutions. Never put keys in the command or JSON; endpoint adapters use `api_key_env`. Remote endpoints must use HTTPS and may charge per request.
+
+```bash
+rarespeech benchmark --adapter adapter.json --model-label MyModel --out runs/model
+rarespeech serve runs/model/report
+```
+
+This generates, transcribes and evaluates the full core, then builds an offline report. The first ASR use downloads weights. A blank transcript is a scored failure; missing audio/transcripts remain missing and withhold the complete headline.
+
+Optional local ONNX integration:
+
+```bash
+python -m pip install -e ".[asr,kokoro-onnx]"
+# Download upstream weights separately; edit examples/adapter-kokoro-onnx.json.
+rarespeech benchmark --adapter examples/adapter-kokoro-onnx.json --model-label Kokoro --out runs/kokoro
+```
+
+## 2. Run the stages separately
 
 ```bash
 rarespeech generate --adapter adapter.json --model-label MyModel --out runs/model --repeats 3 --seed 17
-rarespeech generate --adapter adapter.json --model-label MyModel --out runs/model --repeats 3 --seed 17 --resume
-```
-
-Resume requires the identical corpus/configuration/label/repeats/seed. Successful clips are reused only if their hashes match. Failed or missing clips retry. Record an immutable model revision; the tool cannot detect undeclared changes to files outside the config.
-
-For changed corpora, use a **new** output directory with `--reuse-from runs/previous`. Reuse requires a matching adapter hash, label, repeats and seed, an identical case definition, and unchanged audio. Changed cases regenerate. The run records its source identity; copied timings belong to the original calls.
-
-Python factories load once and expose `synthesize(text, output_path, seed)`, writing a 16-bit PCM WAV. `examples/model_adapters.py` includes Inflect, Piper and Kokoro examples. Install their dependencies and weights separately. Kokoro is an example integration, not part of the bundled measured pilots.
-
-OpenAI-compatible speech adapters request WAV. Use HTTPS for remote endpoints and `api_key_env` for credentials. A provider may charge for requests. Private configs and commands are represented in reports by a hash; record relevant public generation settings separately.
-
-## Import existing audio
-
-Files: `<case_id>.wav`, mono/stereo 16-bit PCM. Convert other formats first. Missing files stay visible.
-
-```bash
-rarespeech import-audio --audio-dir my-audio --model-label MyModel --out runs/imported
-```
-
-Imported audio has no measured inference timing.
-
-## Transcribe
-
-```bash
-python -m pip install -e ".[asr]"
 rarespeech transcribe --run runs/model --out runs/model/asr.jsonl --model small.en --device cpu --compute int8
-```
-
-First use downloads the recognizer. Language is English; no initial prompt supplies target vocabulary. VAD is disabled to avoid dropping content. Interrupted transcription saves completed rows; rerunning re-transcribes successful clips. ASR package wheels may limit supported Python/platform combinations; Python 3.12 is the tested optional-ASR environment.
-
-Add `--resume` to reuse transcripts only when sample ID, audio hash, recognizer name and settings match. Public recognizer names are not immutable checkpoint pins; record downloaded revisions separately for strict research replication.
-
-## Bring your own transcripts
-
-JSONL uses **sample IDs**, not case IDs:
-
-```json
-{"id":"mineralogy.01.isolated--r1","text":"The entry names omphacite...","audio_hash":"actual-sha256-from-samples.json","engine":"your-asr/model-revision","settings":{"language":"en"}}
-```
-
-Hash must match. Blank text is a scored error; absent rows are missing measurements. Duplicate/unknown IDs are rejected. Do not correct transcripts against reference text before scoring.
-
-## Evaluate and inspect
-
-```bash
 rarespeech evaluate --run runs/model --transcripts runs/model/asr.jsonl --out runs/model/report.json
 rarespeech report runs/model/report.json --audio-root runs/model --out reports/model
-rarespeech serve reports/model
 ```
 
-The portable folder includes HTML, local assets, audio, report JSON, and model-card Markdown. It can open directly from disk or through the localhost server. `serve` is a local inspection server, not hardened public application hosting. Deploy the static folder to public hosting.
+`--resume` for generation requires an identical corpus, adapter identity, label, repeat count and seed. Successful audio is reused only after hash verification. Transcription resume checks audio identity, model weight/config fingerprints and decoding/runtime settings. Do not edit a published corpus or resume after undeclared changes to weights.
 
-## Review
+For a new selection, `--reuse-from runs/previous` reuses only identical case definitions under identical adapter/repeat/seed identities. Changed cases regenerate. Original call timings remain original; there is no cross-hardware speed ranking.
 
-Listen, use a pseudonym, mark pass/fail/uncertain, and export JSONL. Consult accepted pronunciation evidence; guesses are uncertain.
+## 3. Import your own recordings or transcripts
+
+Audio files use `<case_id>.wav` (for example `core.mineralogy.01.isolated.wav`), mono/stereo 16-bit PCM. Imported recordings have no measured generation timing.
 
 ```bash
-rarespeech review --report runs/model/report.json --decisions reviews.jsonl --out runs/model/reviewed.json
-rarespeech report runs/model/reviewed.json --audio-root runs/model --out reports/reviewed
-rarespeech compare runs/old/report.json runs/new/report.json --out changes.json
+rarespeech import-audio --audio-dir audio --model-label MyModel --provenance adapter-identity.json --out runs/imported
 ```
 
-Duplicate merged decisions are rejected. To revise one, explicitly remove its previous entry from the report’s `reviews` array before reimporting. Checkpoint comparisons should use the same corpus, repeat IDs, and ASR settings.
+`--provenance` reads declared model identity/settings only; it never executes an adapter. Without that provenance, submission checks withhold canonical table eligibility. See [adapter-import.json](../examples/adapter-import.json).
 
-## Rebuild the static explorer
+Transcript JSONL uses **sample IDs**, plus exact audio SHA-256 and fixed recognizer identity:
+
+```json
+{"id":"core.mineralogy.01.isolated--r1","text":"omphacite","audio_hash":"ACTUAL_AUDIO_SHA256","engine":"your-asr/revision","settings":{"language":"en","model_weights_sha256":"ACTUAL_WEIGHTS_SHA256","model_config_sha256":"ACTUAL_CONFIG_SHA256"}}
+```
+
+Duplicate/unknown IDs and changed audio bindings are rejected. Do not repair transcripts against reference text or prime the recognizer with rare words. The shipped transcription command records actual ASR fingerprints automatically.
+
+## 4. Audit, compare and listen
+
+```bash
+rarespeech transcribe --run runs/model --out runs/model/asr-base.jsonl --model base.en
+rarespeech evaluate --run runs/model --transcripts runs/model/asr-base.jsonl --out runs/model/alternate.json
+rarespeech audit-asr runs/model/report.json runs/model/alternate.json --out recognizer-audit.json
+rarespeech compare reports/baseline/report.json reports/model/report.json --out paired-comparison.json
+rarespeech study --reports reports/baseline/report.json reports/model/report.json --out study --seed 17
+rarespeech serve study
+```
+
+The listening folder conceals model names and ASR verdicts. Its organizer key is saved **beside** the folder; keep it private. Listeners use pseudonyms and export occurrence decisions. Pass means present and acceptably pronounced; unfamiliar or unresolved cases are uncertain.
+
+```bash
+rarespeech unblind --key study.key.json --decisions listener.jsonl --out decisions
+rarespeech review --report reports/model/report.json --decisions decisions/REPORT_ID.jsonl --out reviewed.json
+rarespeech submission --report reviewed.json --out submission
+```
+
+Submission validation reconstructs scores and checks immutable track/evaluator/recognizer identities. It does not authenticate a model, inspect audio bytes, qualify listeners or confer scientific validation. See [submission rules](SUBMISSIONS.md) and [methodology](METHODOLOGY.md).
+
+## Rebuild the explorer
 
 ```bash
 python -m pip install -e ".[rarity]"
 python scripts/build_corpus.py
+python scripts/build_core.py
 python scripts/build_site.py
 rarespeech serve site
 ```
 
-Do not silently edit a published corpus. Changed hashes require newly generated/evaluated examples.
+The generated site and reports are static. The inspection server binds localhost and is not a public application server. Deploy the static directory for public access.

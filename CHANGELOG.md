@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0 — 2026-10-12
+
+- Added frozen packaged core/stress tracks and a corpus-design audit.
+- Added balanced primary-target analysis and paired lexical-dependency intervals.
+- Corrected overconfident legacy intervals and missing declared-repeat coverage.
+- Added opaque listening packets, organizer-only keys and review restoration.
+- Added recomputed submission checks, immutable recognizer fingerprints and model-card outputs.
+- Redesigned the dataset, evidence and protocol website around research tables.
+- Added full-core open-model configurations with original audio and two-recognizer audits.
+- Independent expert pronunciation acceptance and empirical acoustic calibration remain pending.
+
 ## 0.1.0
 
 - Authored 320-case English candidate collection with 64 term families and frequency provenance.

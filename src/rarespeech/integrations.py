@@ -70,6 +70,31 @@ class KokoroAdapter:
             f.writeframes((np.clip(audio, -1, 1) * 32767).astype("<i2").tobytes())
 
 
+class KokoroONNXAdapter:
+    def __init__(self, options):
+        import onnxruntime as ort
+        from kokoro_onnx import Kokoro
+
+        session_options = ort.SessionOptions()
+        session_options.intra_op_num_threads = options.get("threads", 2)
+        session_options.inter_op_num_threads = 1
+        session = ort.InferenceSession(options["model_path"], session_options, providers=["CPUExecutionProvider"])
+        self.engine = Kokoro.from_session(session, options["voices_path"])
+        self.voice = options.get("voice", "af_heart")
+        self.speed = options.get("speed", 1.0)
+        self.language = options.get("language", "en-us")
+
+    def synthesize(self, text, output, seed):
+        import numpy as np
+
+        audio, rate = self.engine.create(text, voice=self.voice, speed=self.speed, lang=self.language)
+        with wave.open(str(output), "wb") as f:
+            f.setnchannels(1)
+            f.setsampwidth(2)
+            f.setframerate(rate)
+            f.writeframes((np.clip(audio, -1, 1) * 32767).astype("<i2").tobytes())
+
+
 def inflect(options):
     return InflectAdapter(options)
 
@@ -80,3 +105,7 @@ def piper(options):
 
 def kokoro(options):
     return KokoroAdapter(options)
+
+
+def kokoro_onnx(options):
+    return KokoroONNXAdapter(options)

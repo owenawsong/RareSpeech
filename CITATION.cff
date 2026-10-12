@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use RareSpeech, cite this software and record the corpus hash."
-title: "RareSpeech: Rare-content fidelity diagnostics for text-to-speech"
+title: "RareSpeech: Long-tail lexical fidelity evaluation for text-to-speech"
 type: software
-version: 0.1.0
-date-released: 2026-10-11
+version: 0.2.0
+date-released: 2026-10-12
 authors:
   - family-names: Song
     given-names: Owen

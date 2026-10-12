@@ -1,3 +1,6 @@
 * text=auto eol=lf
 *.wav binary
 *.png binary
+# Frozen capture bytes are evidence: preserve JSON/JSONL newlines across clones.
+examples/**/*.json -text whitespace=cr-at-eol
+examples/**/*.jsonl -text whitespace=cr-at-eol

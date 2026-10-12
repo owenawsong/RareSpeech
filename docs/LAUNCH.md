@@ -2,39 +2,25 @@
 
 ## Short description
 
-RareSpeech inspects what text-to-speech loses when the words get unfamiliar.
-An open toolkit, 320 specialist-text challenges, and audio reports you can inspect.
+RareSpeech evaluates the words that whole-passage WER can hide: a fixed rare-term core, stress cases, original audio evidence and blinded listening tools.
 
 ## Suggested announcement
 
-I’m building speech models, and wanted to see what happens after the easy test
-sentences end. RareSpeech tests uncommon terminology, dense passages, and repeated
-entries across eight domains—from mineralogy to manuscript studies.
+One specialist word can be the reason a sentence matters. WER gives it the same weight as every other word.
 
-It reports whole-passage WER beside retention of the important target occurrences,
-then lets you open the actual audio and record listening judgments. Bring a model,
-a speech endpoint, a command, or WAV files you already have. Reports work offline.
+I built RareSpeech to inspect that failure mode in text-to-speech. Its 128-case core measures 64 uncommon terms bare and in neutral context, with equal domain/family/condition weights. A separate 192-case stress track probes repeated terms, longer passages and familiar controls.
 
-The first release includes 320 authored candidate cases and real integration
-audio from three model configurations. Automatic scores are ASR proxies; expert
-pronunciation validation is still pending. I’m looking for qualified terminology
-reviewers, model adapters, and reproducible hard cases.
+The release includes full-core recordings from Kokoro and Piper, a second-recognizer audit, term-level audio/transcript evidence, paired cluster comparisons and blinded listening packets. Bring your model, speech endpoint, command or existing WAV files. The reports work offline.
 
-Repository: https://github.com/owenawsong/RareSpeech
+This is a candidate research benchmark, not a validated pronunciation leaderboard. Automatic retention is an ASR proxy; independent expert references and listening calibration are the next empirical steps. Contributions from speech researchers and terminology reviewers are especially welcome.
 
-## Useful demonstration
+[Repository](https://github.com/owenawsong/RareSpeech)
 
-1. Open a measured report.
-2. Show whole-passage WER beside rare-target retention.
-3. Open a suspected error and play the audio.
-4. Show the expected/ASR alignment and recognizer disagreement.
-5. Mark uncertain when the evidence does not establish a verdict.
-6. Show the exported artifact/model-card table.
+## Demonstration sequence
 
-Advertise the workflow and evidence. Do not imply that the automatic retention
-score is verified pronunciation accuracy, that the terms were absent from model
-training, or that the integration pilots establish an overall winning model.
+1. Show WER beside balanced rare-target retention for a named configuration.
+2. Open a term, play the original recording and inspect the transcript alignment.
+3. Show a recognizer disagreement without claiming which recognizer is right.
+4. Open the model-blind listening packet and the exported submission table.
 
-Share with communities whose members build or evaluate speech systems. Explain
-what you measured and welcome criticism of the protocol. Ask permission before
-proposing additions to someone else’s model card; avoid unsolicited bulk outreach.
+Share actual evidence and the protocol. Do not claim unseen training vocabulary, human-calibrated WER, broad model superiority or cross-hardware speed rankings. Ask authors before suggesting additions to their model cards; no unsolicited bulk outreach.

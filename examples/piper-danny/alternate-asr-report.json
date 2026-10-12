@@ -1,9 +1,9 @@
 {
   "schema": "rarespeech.report.v1",
-  "version": "0.1.0",
-  "measurement_hash": "e899f3735eab6dcb7fcc9b4f597193ad894a2f07cbadeca0c38e39c8c1853c6a",
+  "version": "0.2.0",
+  "measurement_hash": "081fc37a558eccdfff2916fcb67994ebf3350dc7718225154906395723158267",
   "corpus_hash": "8df1b8ee2db9b00aa5c495d726294ebcf81ed4dc418bd36a2f31380c56260c49",
-  "report_id": "bca76ab8004cf557daae4ae73391f5abdb1cf4691cbc5c6588062c1d7b531274",
+  "report_id": "cec1cc2299a2dc521236aae6d0875acf5cb36b4a5168d5f6db4cb4eb94884c28",
   "metadata": {
     "schema": "rarespeech.run.v1",
     "version": "0.1.0",
@@ -14824,11 +14824,634 @@
       "wer": 0.0
     }
   },
+  "research_protocol": {
+    "schema": "rarespeech.protocol.v1",
+    "protocol_id": "rarespeech.balanced-primary.v1",
+    "label": "Balanced primary-target retention (ASR proxy)",
+    "weighting": "equal category / family / condition / case / generation repeat; mean primary occurrences",
+    "complete": true,
+    "headline_eligible": true,
+    "recognizer_consistent": true,
+    "recognizer_configuration_count": 1,
+    "coverage": {
+      "expected_cases": 24,
+      "scored_cases": 24,
+      "missing_case_ids": [],
+      "scored_rows_without_primary": []
+    },
+    "scores": {
+      "primary_target_retention": 0.15277777777777776,
+      "all_target_retention": 0.1638888888888889
+    },
+    "observed_scores": {
+      "primary_target_retention": 0.15277777777777776,
+      "all_target_retention": 0.1638888888888889
+    },
+    "categories": [
+      {
+        "category": "astronomy",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.1111111111111111
+      },
+      {
+        "category": "botany",
+        "primary_target_retention": 0.1111111111111111,
+        "all_target_retention": 0.06666666666666667
+      },
+      {
+        "category": "linguistics",
+        "primary_target_retention": 0.4444444444444444,
+        "all_target_retention": 0.17777777777777778
+      },
+      {
+        "category": "manuscripts",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.35555555555555557
+      },
+      {
+        "category": "mathematics",
+        "primary_target_retention": 0.6666666666666666,
+        "all_target_retention": 0.48888888888888893
+      },
+      {
+        "category": "mineralogy",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.0
+      },
+      {
+        "category": "musicology",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.1111111111111111
+      },
+      {
+        "category": "zoology",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.0
+      }
+    ],
+    "families": [
+      {
+        "category": "astronomy",
+        "family_id": "astronomy.01",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.1111111111111111
+      },
+      {
+        "category": "botany",
+        "family_id": "botany.01",
+        "primary_target_retention": 0.1111111111111111,
+        "all_target_retention": 0.06666666666666667
+      },
+      {
+        "category": "linguistics",
+        "family_id": "linguistics.01",
+        "primary_target_retention": 0.4444444444444444,
+        "all_target_retention": 0.17777777777777778
+      },
+      {
+        "category": "manuscripts",
+        "family_id": "manuscripts.01",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.35555555555555557
+      },
+      {
+        "category": "mathematics",
+        "family_id": "mathematics.01",
+        "primary_target_retention": 0.6666666666666666,
+        "all_target_retention": 0.48888888888888893
+      },
+      {
+        "category": "mineralogy",
+        "family_id": "mineralogy.01",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.0
+      },
+      {
+        "category": "musicology",
+        "family_id": "musicology.01",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.1111111111111111
+      },
+      {
+        "category": "zoology",
+        "family_id": "zoology.01",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.0
+      }
+    ],
+    "conditions": [
+      {
+        "condition": "dense",
+        "primary_target_retention": 0.25,
+        "all_target_retention": 0.29166666666666663
+      },
+      {
+        "condition": "extended",
+        "primary_target_retention": 0.20833333333333331,
+        "all_target_retention": 0.2
+      },
+      {
+        "condition": "isolated",
+        "primary_target_retention": 0.0,
+        "all_target_retention": 0.0
+      }
+    ],
+    "dependency_design": {
+      "method": "shared-normalized-target/accepted-form and declared-cluster transitive closure",
+      "clusters": [
+        {
+          "id": "astronomy.01",
+          "families": [
+            "astronomy.01"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "botany.01",
+          "families": [
+            "botany.01"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "linguistics.01",
+          "families": [
+            "linguistics.01"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "manuscripts.01",
+          "families": [
+            "manuscripts.01"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "mathematics.01",
+          "families": [
+            "mathematics.01"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mineralogy.01",
+          "families": [
+            "mineralogy.01"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "musicology.01",
+          "families": [
+            "musicology.01"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "zoology.01",
+          "families": [
+            "zoology.01"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        }
+      ],
+      "family_to_cluster": {
+        "astronomy.01": "astronomy.01",
+        "botany.01": "botany.01",
+        "linguistics.01": "linguistics.01",
+        "manuscripts.01": "manuscripts.01",
+        "mathematics.01": "mathematics.01",
+        "mineralogy.01": "mineralogy.01",
+        "musicology.01": "musicology.01",
+        "zoology.01": "zoology.01"
+      },
+      "clusters_per_category": {
+        "astronomy": 1,
+        "botany": 1,
+        "linguistics": 1,
+        "manuscripts": 1,
+        "mathematics": 1,
+        "mineralogy": 1,
+        "musicology": 1,
+        "zoology": 1
+      },
+      "cross_category_clusters": [],
+      "shared_targets": [],
+      "interval_eligible": false,
+      "interval_unavailable_reason": "fewer_than_two_dependency_clusters_in_a_category",
+      "limitation": "Lexical closure does not account for all morphological, carrier or speaker dependencies."
+    },
+    "limitations": [
+      "ASR retention is not pronunciation ground truth.",
+      "Condition values apply only to the declared selected corpus.",
+      "Controls are excluded; this score is not a causal rarity penalty."
+    ]
+  },
+  "corpus_audit": {
+    "schema": "rarespeech.corpus-audit.v1",
+    "cases": 32,
+    "families": 8,
+    "unique_noncontrol_targets": 24,
+    "categories": {
+      "astronomy": 4,
+      "botany": 4,
+      "linguistics": 4,
+      "manuscripts": 4,
+      "mathematics": 4,
+      "mineralogy": 4,
+      "musicology": 4,
+      "zoology": 4
+    },
+    "conditions": {
+      "control": 8,
+      "dense": 8,
+      "extended": 8,
+      "isolated": 8
+    },
+    "family_conditions": {
+      "astronomy.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "botany.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "linguistics.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "manuscripts.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "mathematics.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "mineralogy.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "musicology.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      },
+      "zoology.01": {
+        "control": 1,
+        "dense": 1,
+        "extended": 1,
+        "isolated": 1
+      }
+    },
+    "primary_frequency": [
+      {
+        "family_id": "astronomy.01",
+        "term": "analemma",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      },
+      {
+        "family_id": "botany.01",
+        "term": "anemophily",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      },
+      {
+        "family_id": "linguistics.01",
+        "term": "haplology",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      },
+      {
+        "family_id": "manuscripts.01",
+        "term": "opisthograph",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      },
+      {
+        "family_id": "mathematics.01",
+        "term": "homeomorphism",
+        "zipf": 1.65,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "rare"
+      },
+      {
+        "family_id": "mineralogy.01",
+        "term": "omphacite",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      },
+      {
+        "family_id": "musicology.01",
+        "term": "sesquialtera",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      },
+      {
+        "family_id": "zoology.01",
+        "term": "opisthobranch",
+        "zipf": 0.0,
+        "provider": "wordfreq",
+        "version": "3.1.1",
+        "tier": "below-coverage"
+      }
+    ],
+    "primary_frequency_tiers": {
+      "below-coverage": 7,
+      "rare": 1
+    },
+    "primary_term_character_lengths": {
+      "8": 1,
+      "9": 2,
+      "10": 1,
+      "12": 2,
+      "13": 2
+    },
+    "carrier_diversity": {
+      "unique": 3,
+      "noncontrol_cases": 24,
+      "largest_reuse": 8
+    },
+    "most_reused_carriers": [
+      {
+        "template": "The entry names  <TARGET> . Read the entry once, then continue to the next page.",
+        "cases": 8
+      },
+      {
+        "template": "The specialist index lists  <TARGET> ,  <TARGET> , and  <TARGET> . Each term has its own entry. Keep all three entries in that order.",
+        "cases": 8
+      },
+      {
+        "template": "This is a spoken transcription of an index card. The heading is  <TARGET> . The card belongs to a specialist collection, and its spelling must be preserved in the record. A second card has the heading  <TARGET> . Those are separate cards, even when a reader is unfamiliar with both headings. The first card is filed before the second. A handwritten note refers back to  <TARGET> , and a printed note refers to  <TARGET> . The notes should not replace either heading. At the end of the recording, the archivist returns to the first card and repeats its heading:  <TARGET> . The recording ends after this sentence.",
+        "cases": 8
+      }
+    ],
+    "duplicate_text_groups": [
+      [
+        "mineralogy.01.control",
+        "botany.01.control",
+        "manuscripts.01.control",
+        "linguistics.01.control",
+        "zoology.01.control",
+        "astronomy.01.control",
+        "mathematics.01.control",
+        "musicology.01.control"
+      ]
+    ],
+    "normalized_duplicate_text_groups": [
+      [
+        "mineralogy.01.control",
+        "botany.01.control",
+        "manuscripts.01.control",
+        "linguistics.01.control",
+        "zoology.01.control",
+        "astronomy.01.control",
+        "mathematics.01.control",
+        "musicology.01.control"
+      ]
+    ],
+    "redundant_or_empty_aliases": [],
+    "normalization_collisions": [],
+    "normalizer": "NFKC, casefold, punctuation boundaries, apostrophes retained; diacritics and numbers preserved",
+    "control_pair_audit": [
+      {
+        "family_id": "astronomy.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 8,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "botany.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 10,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "linguistics.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 9,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "manuscripts.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 12,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "mathematics.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 13,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "mineralogy.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 9,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "musicology.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 12,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      },
+      {
+        "family_id": "zoology.01",
+        "available": true,
+        "character_length_matched": false,
+        "primary_characters": 13,
+        "control_characters": 6,
+        "primary_tokens": 1,
+        "control_tokens": 1
+      }
+    ],
+    "control_limitation": "Character/token length matching does not match phonemes, stress, familiarity or carrier semantics.",
+    "missing_reference_urls": [],
+    "pronunciation_status_occurrences": {
+      "unreviewed": 72
+    },
+    "dependency_design": {
+      "method": "shared-normalized-target/accepted-form and declared-cluster transitive closure",
+      "clusters": [
+        {
+          "id": "astronomy.01",
+          "families": [
+            "astronomy.01"
+          ],
+          "categories": [
+            "astronomy"
+          ]
+        },
+        {
+          "id": "botany.01",
+          "families": [
+            "botany.01"
+          ],
+          "categories": [
+            "botany"
+          ]
+        },
+        {
+          "id": "linguistics.01",
+          "families": [
+            "linguistics.01"
+          ],
+          "categories": [
+            "linguistics"
+          ]
+        },
+        {
+          "id": "manuscripts.01",
+          "families": [
+            "manuscripts.01"
+          ],
+          "categories": [
+            "manuscripts"
+          ]
+        },
+        {
+          "id": "mathematics.01",
+          "families": [
+            "mathematics.01"
+          ],
+          "categories": [
+            "mathematics"
+          ]
+        },
+        {
+          "id": "mineralogy.01",
+          "families": [
+            "mineralogy.01"
+          ],
+          "categories": [
+            "mineralogy"
+          ]
+        },
+        {
+          "id": "musicology.01",
+          "families": [
+            "musicology.01"
+          ],
+          "categories": [
+            "musicology"
+          ]
+        },
+        {
+          "id": "zoology.01",
+          "families": [
+            "zoology.01"
+          ],
+          "categories": [
+            "zoology"
+          ]
+        }
+      ],
+      "family_to_cluster": {
+        "astronomy.01": "astronomy.01",
+        "botany.01": "botany.01",
+        "linguistics.01": "linguistics.01",
+        "manuscripts.01": "manuscripts.01",
+        "mathematics.01": "mathematics.01",
+        "mineralogy.01": "mineralogy.01",
+        "musicology.01": "musicology.01",
+        "zoology.01": "zoology.01"
+      },
+      "clusters_per_category": {
+        "astronomy": 1,
+        "botany": 1,
+        "linguistics": 1,
+        "manuscripts": 1,
+        "mathematics": 1,
+        "mineralogy": 1,
+        "musicology": 1,
+        "zoology": 1
+      },
+      "cross_category_clusters": [],
+      "shared_targets": [],
+      "interval_eligible": false,
+      "interval_unavailable_reason": "fewer_than_two_dependency_clusters_in_a_category",
+      "limitation": "Lexical closure does not account for all morphological, carrier or speaker dependencies."
+    },
+    "claims": {
+      "training_exposure_measured": false,
+      "expert_validation_established": false
+    }
+  },
   "summary": {
     "complete": true,
+    "headline_eligible": true,
     "automatic_accuracy": 0.20833333333333331,
     "observed_accuracy": 0.20833333333333331,
     "interval": null,
+    "interval_method": "category-stratified lexical-dependency cluster bootstrap; 1000 draws, seed 17",
+    "interval_unavailable_reason": "fewer_than_two_dependency_clusters_in_a_category",
     "scored": 32,
     "samples": 32,
     "label": "ASR target-retention proxy; not verified pronunciation accuracy"
@@ -14837,6 +15460,9 @@
   "review_summary": {
     "reviewed": 0,
     "required": 72,
-    "verified_accuracy": null
+    "verified_accuracy": null,
+    "balanced_protocol_id": "rarespeech.balanced-primary.v1",
+    "balanced_primary_target_accuracy": null,
+    "balanced_all_target_accuracy": null
   }
 }

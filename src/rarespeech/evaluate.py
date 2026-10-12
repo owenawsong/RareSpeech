@@ -5,13 +5,17 @@ from copy import deepcopy
 from pathlib import Path
 
 from . import __version__
+from .audit import audit_corpus
 from .corpus import corpus_hash
 from .io import digest, unique
 from .metrics import bootstrap, macro_accuracy, score_case
+from .protocol import PROTOCOL_ID, analyze_protocol, balanced_scores, paired_analysis
 
 
 def evaluate(cases, samples, transcripts, metadata=None):
     cases, samples, transcripts, metadata = deepcopy((cases, samples, transcripts, metadata))
+    if not cases:
+        raise ValueError("cannot evaluate an empty corpus")
     cmap, smap, tmap = unique(cases), unique(samples), unique(transcripts)
     unknown = set(tmap) - set(smap)
     if unknown:
@@ -46,24 +50,50 @@ def evaluate(cases, samples, transcripts, metadata=None):
             or bool(row.get("audio_info", {}).get("flags"))
         )
         rows.append(row)
+    # Honor an explicit generation design; otherwise an interrupted multi-repeat
+    # run can appear complete when its final repeats never reached samples.json.
+    repeats = (metadata or {}).get("identity", {}).get("repeats")
+    expected_missing = []
+    if repeats is not None:
+        if type(repeats) is not int or not 1 <= repeats <= 20:
+            raise ValueError("declared repeats must be an integer between 1 and 20")
+        observed_repeats = set()
+        for sample in samples:
+            repeat = sample.get("repeat")
+            if type(repeat) is not int or not 1 <= repeat <= repeats:
+                raise ValueError("sample repeat is missing or outside the declared repeat design")
+            key = (sample["case_id"], repeat)
+            if key in observed_repeats:
+                raise ValueError("multiple samples for one declared case/repeat")
+            observed_repeats.add(key)
+        for case in cases:
+            for repeat in range(1, repeats + 1):
+                if (case["id"], repeat) not in observed_repeats:
+                    expected_missing.append((case, f"{case['id']}--r{repeat}", repeat))
     # Missing cases must remain visible even for a partial audio import.
     present = {r["case_id"] for r in rows}
-    for case in cases:
-        if case["id"] not in present:
-            rows.append(
-                {
-                    "id": case["id"] + "--missing",
-                    "case_id": case["id"],
-                    "case": case,
-                    "category": case["category"],
-                    "variant": case["variant"],
-                    "family_id": case["family_id"],
-                    "status": "missing",
-                    "metrics": None,
-                    "transcript": None,
-                    "needs_review": True,
-                }
-            )
+    if repeats is None:
+        expected_missing = [
+            (case, case["id"] + "--missing", None) for case in cases if case["id"] not in present
+        ]
+    for case, sid, repeat in expected_missing:
+        if sid in smap:
+            raise ValueError("sample ID collides with a missing declared repeat")
+        rows.append(
+            {
+                "id": sid,
+                "repeat": repeat,
+                "case_id": case["id"],
+                "case": case,
+                "category": case["category"],
+                "variant": case["variant"],
+                "family_id": case["family_id"],
+                "status": "missing",
+                "metrics": None,
+                "transcript": None,
+                "needs_review": True,
+            }
+        )
     totals = defaultdict(
         lambda: {"samples": 0, "scored": 0, "retained": 0, "targets": 0, "errors": 0, "reference_tokens": 0}
     )
@@ -85,10 +115,13 @@ def evaluate(cases, samples, transcripts, metadata=None):
         b["wer"] = b["errors"] / b["reference_tokens"] if b["reference_tokens"] else None
     complete = all(r["metrics"] is not None for r in rows)
     score = macro_accuracy(rows)
+    protocol = analyze_protocol(rows, cases)
+    corpus_audit = audit_corpus(cases)
+    headline_eligible = complete and protocol["recognizer_consistent"]
     measurement_hash = digest(
         {
             name: Path(__file__).with_name(name).read_text(encoding="utf-8")
-            for name in ("metrics.py", "evaluate.py")
+            for name in ("metrics.py", "evaluate.py", "protocol.py", "audit.py")
         }
     )
     return {
@@ -109,11 +142,22 @@ def evaluate(cases, samples, transcripts, metadata=None):
         "cases": cases,
         "rows": rows,
         "totals": dict(totals),
+        "research_protocol": protocol,
+        "corpus_audit": corpus_audit,
         "summary": {
             "complete": complete,
-            "automatic_accuracy": score if complete else None,
+            "headline_eligible": headline_eligible,
+            "automatic_accuracy": score if headline_eligible else None,
             "observed_accuracy": score,
-            "interval": bootstrap(rows) if complete else None,
+            "interval": bootstrap(rows) if headline_eligible else None,
+            "interval_method": "category-stratified lexical-dependency cluster bootstrap; 1000 draws, seed 17",
+            "interval_unavailable_reason": (
+                "incomplete_coverage"
+                if not complete
+                else "mixed_recognizer_configurations"
+                if not protocol["recognizer_consistent"]
+                else corpus_audit["dependency_design"]["interval_unavailable_reason"]
+            ),
             "scored": sum(r["metrics"] is not None for r in rows),
             "samples": len(rows),
             "label": "ASR target-retention proxy; not verified pronunciation accuracy",
@@ -123,6 +167,9 @@ def evaluate(cases, samples, transcripts, metadata=None):
             "reviewed": 0,
             "required": sum(len(r["case"]["targets"]) for r in rows if r["variant"] != "control"),
             "verified_accuracy": None,
+            "balanced_protocol_id": PROTOCOL_ID,
+            "balanced_primary_target_accuracy": None,
+            "balanced_all_target_accuracy": None,
         },
     }
 
@@ -146,7 +193,7 @@ def merge_reviews(report, reviews):
             raise ValueError("invalid review verdict")
         if not isinstance(review.get("rater"), str) or not review["rater"].strip():
             raise ValueError("review requires a rater pseudonym")
-        key = (review["sample_id"], review["target_id"], review["rater"])
+        key = (review["sample_id"], review["target_id"], review["rater"].strip().casefold())
         if key in seen:
             raise ValueError("duplicate rater decision; remove old decision explicitly before replacing")
         seen.add(key)
@@ -155,6 +202,10 @@ def merge_reviews(report, reviews):
     for review in validated:
         grouped[(review["sample_id"], review["target_id"])].append(review["verdict"])
     required, decided, passed, disputed = 0, 0, 0, 0
+    review_rows = deepcopy(report["rows"])
+    for row in review_rows:
+        row.pop("review_targets", None)
+    review_by_id = unique(review_rows)
     categories = defaultdict(lambda: [0, 0])
     for row in report["rows"]:
         if row["variant"] == "control":
@@ -169,8 +220,21 @@ def merge_reviews(report, reviews):
                 b = categories[row["category"]]
                 b[0] += votes[0] == "pass"
                 b[1] += 1
+                reviewed = review_by_id[row["id"]]
+                reviewed.setdefault("review_targets", []).append(
+                    {"id": target["id"], "text": target["text"], "retained": votes[0] == "pass"}
+                )
             elif len(votes) >= 2:
                 disputed += 1
+    for row in review_rows:
+        if row["variant"] != "control":
+            reviewed_targets = row.pop("review_targets", [])
+            row["metrics"] = (
+                {"targets": reviewed_targets}
+                if len(reviewed_targets) == len(row["case"]["targets"])
+                else None
+            )
+    reviewed_scores = balanced_scores(review_rows, report["cases"])["scores"]
     report["reviews"] = validated
     report["review_summary"] = {
         "reviewed": decided,
@@ -183,6 +247,13 @@ def merge_reviews(report, reviews):
             else None
         ),
         "policy": "two agreeing raters per target; disputes and uncertainty remain unresolved",
+        "balanced_protocol_id": PROTOCOL_ID,
+        "balanced_primary_target_accuracy": reviewed_scores["primary_target_retention"]
+        if required and decided == required
+        else None,
+        "balanced_all_target_accuracy": reviewed_scores["all_target_retention"]
+        if required and decided == required
+        else None,
     }
     return report
 
@@ -199,6 +270,13 @@ def compare(left, right):
         ta, tb = a[sid].get("transcript"), b[sid].get("transcript")
         if ta and tb and (ta.get("engine"), ta.get("settings")) != (tb.get("engine"), tb.get("settings")):
             raise ValueError("ASR configurations differ; use audit-asr for recognizer disagreement")
+        if a[sid]["case_id"] != b[sid]["case_id"]:
+            raise ValueError("comparison requires identical sample-to-case assignments")
+        if a[sid].get("metrics") and b[sid].get("metrics"):
+            if [t["id"] for t in a[sid]["metrics"]["targets"]] != [
+                t["id"] for t in b[sid]["metrics"]["targets"]
+            ]:
+                raise ValueError("comparison requires identical target occurrence IDs")
     changes = []
     for sid in a:
         x, y = a[sid], b[sid]
@@ -216,6 +294,7 @@ def compare(left, right):
         "baseline": left["report_id"],
         "candidate": right["report_id"],
         "changes": changes,
+        "paired_analysis": paired_analysis(left, right),
         "note": "ASR proxy changes; confirm by listening. Different ASR configurations are a confound.",
     }
 
@@ -227,14 +306,21 @@ def audit_asr(left, right):
     a, b = unique(left["rows"]), unique(right["rows"])
     if set(a) != set(b):
         raise ValueError("ASR audit requires identical samples")
+    if left.get("measurement_hash") != right.get("measurement_hash"):
+        raise ValueError("ASR audit requires identical evaluator implementations")
     changes = []
+    scored_pairs, target_pairs = 0, 0
     for sid in a:
         x, y = a[sid], b[sid]
         if x.get("audio_hash") != y.get("audio_hash"):
             raise ValueError("ASR audit cannot compare different audio")
         if not x.get("metrics") or not y.get("metrics"):
             continue
+        if [t["id"] for t in x["metrics"]["targets"]] != [t["id"] for t in y["metrics"]["targets"]]:
+            raise ValueError("ASR audit requires identical target occurrence IDs")
+        scored_pairs += 1
         for tx, ty in zip(x["metrics"]["targets"], y["metrics"]["targets"]):
+            target_pairs += 1
             if tx["retained"] != ty["retained"]:
                 changes.append(
                     {
@@ -250,5 +336,11 @@ def audit_asr(left, right):
         "left": left["report_id"],
         "right": right["report_id"],
         "disagreements": changes,
+        "coverage": {
+            "paired_scored_samples": scored_pairs,
+            "expected_samples": len(a),
+            "paired_targets": target_pairs,
+        },
+        "disagreement_rate": len(changes) / target_pairs if target_pairs else None,
         "note": "Recognizer disagreement; neither side establishes correct pronunciation.",
     }

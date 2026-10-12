@@ -1,7 +1,7 @@
 {
   "schema": "rarespeech.asr-audit.v1",
-  "left": "0f2ff02eac65db68c4044dd7a944690b6c9fc1c76a3800e509a9a99758960935",
-  "right": "299a3dba16737ab8ad5df4ce57aca8f254485c5a15a5737743a10009082e92e1",
+  "left": "ac1a272c8920607b0f561d93be872124820d697c69a0682e8e083aa04c140d0f",
+  "right": "0a2dfa7faf461361dd5c51c8ae2cc2e131e586f22f9e914e82b0377cd9d74ff9",
   "disagreements": [
     {
       "sample_id": "botany.01.isolated--r1",
@@ -109,5 +109,11 @@
       "right_retained": true
     }
   ],
+  "coverage": {
+    "paired_scored_samples": 32,
+    "expected_samples": 32,
+    "paired_targets": 80
+  },
+  "disagreement_rate": 0.1875,
   "note": "Recognizer disagreement; neither side establishes correct pronunciation."
 }
