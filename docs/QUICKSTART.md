@@ -52,7 +52,7 @@ Imported audio has no measured inference timing.
 ## Transcribe
 
 ```bash
-python -m pip install "rarespeech[asr]"
+python -m pip install -e ".[asr]"
 rarespeech transcribe --run runs/model --out runs/model/asr.jsonl --model small.en --device cpu --compute int8
 ```
 
@@ -95,7 +95,7 @@ Duplicate merged decisions are rejected. To revise one, explicitly remove its pr
 ## Rebuild the static explorer
 
 ```bash
-python -m pip install "rarespeech[rarity]"
+python -m pip install -e ".[rarity]"
 python scripts/build_corpus.py
 python scripts/build_site.py
 rarespeech serve site

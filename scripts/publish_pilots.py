@@ -38,9 +38,9 @@ def main():
         transcript = run / "asr-small.jsonl"
         if not transcript.exists():
             raise ValueError(f"complete small.en transcripts first: {source}")
-        cases = json.loads((run / "cases.json").read_text())
-        samples = json.loads((run / "samples.json").read_text())
-        meta = json.loads((run / "run.json").read_text())
+        cases = json.loads((run / "cases.json").read_text(encoding="utf-8"))
+        samples = json.loads((run / "samples.json").read_text(encoding="utf-8"))
+        meta = json.loads((run / "run.json").read_text(encoding="utf-8"))
         meta["publication"] = {
             "status": "engineering integration pilot, not benchmark ranking",
             "selection": "first family in each domain; isolated/dense/extended/control; one generation",

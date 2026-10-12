@@ -14,9 +14,9 @@ def main():
     out.mkdir(exist_ok=True)
     for name in ("index.html", "style.css", "app.js"):
         shutil.copyfile(assets_root() / name, out / name)
-    manifest = json.loads((ROOT / "data" / "manifest.json").read_text())
+    manifest = json.loads((ROOT / "data" / "manifest.json").read_text(encoding="utf-8"))
     examples = (
-        json.loads((ROOT / "examples" / "index.json").read_text())
+        json.loads((ROOT / "examples" / "index.json").read_text(encoding="utf-8"))
         if (ROOT / "examples" / "index.json").exists()
         else []
     )

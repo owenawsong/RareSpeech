@@ -11,16 +11,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     cases = load_cases(ROOT / "data/challenge-v1.jsonl")
-    manifest = json.loads((ROOT / "data/manifest.json").read_text())
+    manifest = json.loads((ROOT / "data/manifest.json").read_text(encoding="utf-8"))
     assert corpus_hash(cases) == manifest["corpus_hash"], "manifest hash mismatch"
     definitions = {c["id"]: c for c in cases}
-    checks = json.loads((ROOT / "data/lexical-source-checks.json").read_text())
+    checks = json.loads((ROOT / "data/lexical-source-checks.json").read_text(encoding="utf-8"))
     documented = {c["term"] for c in checks if c["status"] == 200 and c["english"] and not c["missing"]}
     assert {c["targets"][0]["text"] for c in cases if c["variant"] == "isolated"} <= documented
     # No fabricated human review results in integration examples.
     clips = 0
     for path in (ROOT / "examples").glob("*/report.json"):
-        report = json.loads(path.read_text())
+        report = json.loads(path.read_text(encoding="utf-8"))
         assert report["summary"]["complete"]
         assert not report["reviews"] and report["review_summary"]["verified_accuracy"] is None
         assert all(definitions[c["id"]] == c for c in report["cases"]), (

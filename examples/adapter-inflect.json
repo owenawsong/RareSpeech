@@ -1,6 +1,6 @@
 {
   "type": "python",
-  "factory": "examples.model_adapters:inflect",
+  "factory": "rarespeech.integrations:inflect",
   "model": "Inflect-Nano-v2",
   "revision": "replace-with-the-downloaded-Hugging-Face-commit",
   "seed_supported": true,

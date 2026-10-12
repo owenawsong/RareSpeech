@@ -17,7 +17,7 @@ def parser():
     p = argparse.ArgumentParser(description="RareSpeech — inspect what TTS loses when words get unfamiliar.")
     p.add_argument("--version", action="version", version="RareSpeech 0.1.0")
     sub = p.add_subparsers(dest="action", required=True)
-    for name in ("validate", "export", "generate", "import-audio"):
+    for name in ("validate", "export", "generate", "import-audio", "benchmark"):
         s = sub.add_parser(name)
         s.add_argument("--corpus", type=Path, default=Path("data/challenge-v1.jsonl"))
         if name != "validate":
@@ -25,14 +25,18 @@ def parser():
             s.add_argument("--variant")
             s.add_argument("--limit", type=int)
             s.add_argument("--out", type=Path, required=True)
-        if name in ("generate", "import-audio"):
+        if name in ("generate", "import-audio", "benchmark"):
             s.add_argument("--model-label", required=True)
-        if name == "generate":
+        if name in ("generate", "benchmark"):
             s.add_argument("--adapter", type=Path, required=True)
             s.add_argument("--repeats", type=int, default=1)
             s.add_argument("--seed", type=int, default=17)
             s.add_argument("--resume", action="store_true")
             s.add_argument("--reuse-from", type=Path)
+        if name == "benchmark":
+            s.add_argument("--asr-model", default="small.en")
+            s.add_argument("--asr-device", default="cpu")
+            s.add_argument("--asr-compute", default="int8")
         if name == "import-audio":
             s.add_argument("--audio-dir", type=Path, required=True)
     s = sub.add_parser("transcribe")
@@ -75,6 +79,24 @@ def load_json(path):
 def main():
     args = parser().parse_args()
     try:
+        if args.action == "benchmark":
+            from .pipeline import benchmark
+
+            cases = select(load_cases(args.corpus), args.category, args.variant, args.limit)
+            benchmark(
+                cases,
+                load_json(args.adapter),
+                args.out,
+                args.model_label,
+                args.repeats,
+                args.seed,
+                args.resume,
+                args.reuse_from,
+                args.asr_model,
+                args.asr_device,
+                args.asr_compute,
+            )
+            return
         if args.action == "serve":
             handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(args.directory))
             print(f"Open http://127.0.0.1:{args.port}", flush=True)

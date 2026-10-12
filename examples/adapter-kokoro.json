@@ -1,6 +1,6 @@
 {
   "type": "python",
-  "factory": "examples.model_adapters:kokoro",
+  "factory": "rarespeech.integrations:kokoro",
   "model": "hexgrad/Kokoro-82M",
   "revision": "record-the-downloaded-revision",
   "seed_supported": true,

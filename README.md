@@ -57,11 +57,21 @@ Open **http://127.0.0.1:8765**. Explore the collection and real audio examples. 
 
 ### Test your model
 
+**One command from speech to an inspectable report:**
+
+```bash
+python -m pip install -e ".[asr]"
+rarespeech benchmark --adapter examples/adapter-api.json --model-label MyModel --variant isolated --limit 8 --out runs/quickstart
+rarespeech serve runs/quickstart/report
+```
+
+Requires a working configured TTS endpoint. Omit the selection flags for the full collection. Each stage is also available separately:
+
 Use [an adapter](examples/) or import your audio. For a working local OpenAI-compatible TTS server:
 
 ```bash
 rarespeech generate --adapter examples/adapter-api.json --model-label MyModel --variant isolated --limit 8 --out runs/my-model
-python -m pip install "rarespeech[asr]"
+python -m pip install -e ".[asr]"
 rarespeech transcribe --run runs/my-model --out runs/my-model/asr.jsonl
 rarespeech evaluate --run runs/my-model --transcripts runs/my-model/asr.jsonl --out runs/my-model/report.json
 rarespeech report runs/my-model/report.json --audio-root runs/my-model --out reports/my-model

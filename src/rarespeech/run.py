@@ -29,7 +29,7 @@ def generate(cases, config, out: Path, model_label: str, repeats=1, seed=17, res
     prior = {}
     reusable, source_cases, source_meta = {}, {}, None
     if reuse_from:
-        source_meta = json.loads((reuse_from / "run.json").read_text())
+        source_meta = json.loads((reuse_from / "run.json").read_text(encoding="utf-8"))
         source_identity = source_meta["identity"]
         if (
             source_identity.get("adapter", {}).get("config_hash"),
@@ -38,15 +38,15 @@ def generate(cases, config, out: Path, model_label: str, repeats=1, seed=17, res
             source_identity.get("base_seed"),
         ) != (declared["config_hash"], model_label, repeats, seed):
             raise ValueError("reuse requires matching adapter hash, model label, repeats and seed")
-        reusable = unique(json.loads((reuse_from / "samples.json").read_text()))
-        source_cases = unique(json.loads((reuse_from / "cases.json").read_text()))
+        reusable = unique(json.loads((reuse_from / "samples.json").read_text(encoding="utf-8")))
+        source_cases = unique(json.loads((reuse_from / "cases.json").read_text(encoding="utf-8")))
     if (out / "run.json").exists():
         if not resume:
             raise ValueError("run exists; choose a new directory or --resume")
-        old = json.loads((out / "run.json").read_text())
+        old = json.loads((out / "run.json").read_text(encoding="utf-8"))
         if old["identity"] != identity:
             raise ValueError("cannot resume with changed corpus, adapter, model label, repeats, or seed")
-        prior = unique(json.loads((out / "samples.json").read_text()))
+        prior = unique(json.loads((out / "samples.json").read_text(encoding="utf-8")))
     out.mkdir(parents=True, exist_ok=True)
     (out / "audio").mkdir(exist_ok=True)
     write_json(out / "cases.json", cases)
@@ -140,7 +140,7 @@ def transcribe(run_dir: Path, out: Path, model="small.en", device="cpu", compute
         "condition_on_previous_text": False,
     }
     prior = unique(read_jsonl(out)) if resume and out.exists() else {}
-    samples = json.loads((run_dir / "samples.json").read_text())
+    samples = json.loads((run_dir / "samples.json").read_text(encoding="utf-8"))
     rows = []
     for sample in samples:
         if sample["status"] != "ok":

@@ -135,3 +135,12 @@ def test_reuse_rejects_changed_adapter(tmp_path, monkeypatch):
     config["revision"] = "new"
     with pytest.raises(ValueError, match="matching adapter"):
         generate([c], config, tmp_path / "second", "test", reuse_from=tmp_path / "first")
+
+
+def test_documented_factories_resolve_from_installed_package(monkeypatch):
+    from rarespeech import integrations
+    from rarespeech.adapters import load_adapter
+
+    monkeypatch.setattr(integrations, "InflectAdapter", lambda options: Tone())
+    adapter = load_adapter({"type": "python", "factory": "rarespeech.integrations:inflect", "options": {}})
+    assert isinstance(adapter, Tone)
