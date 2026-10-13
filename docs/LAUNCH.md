@@ -22,6 +22,8 @@ Retention is an ASR proxy, not verified pronunciation accuracy. Expert review an
 
 https://github.com/owenawsong/RareSpeech
 
+Try it: https://owenawsong.github.io/RareSpeech/
+
 ## Developer / research announcement
 
 ### RareSpeech: what happens to the uncommon word?
@@ -43,8 +45,14 @@ This is a candidate research collection, not a validated pronunciation leaderboa
 I'm a student developer building this in the open. I'd especially welcome terminology reviewers, speech researchers and independent model reproductions. The useful next result is a better measurement with inspectable evidence.
 
 Repository: https://github.com/owenawsong/RareSpeech
-Technical report: https://github.com/owenawsong/RareSpeech/blob/main/docs/TECHNICAL_REPORT.md
-Measured baselines: https://github.com/owenawsong/RareSpeech/blob/main/docs/BASELINES.md
+
+Try it: https://owenawsong.github.io/RareSpeech/
+Technical report: https://github.com/owenawsong/RareSpeech
+
+Try it: https://owenawsong.github.io/RareSpeech//blob/main/docs/TECHNICAL_REPORT.md
+Measured baselines: https://github.com/owenawsong/RareSpeech
+
+Try it: https://owenawsong.github.io/RareSpeech//blob/main/docs/BASELINES.md
 
 ## Release notes · v0.2
 

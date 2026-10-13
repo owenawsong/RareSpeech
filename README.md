@@ -4,7 +4,7 @@
 
 **Long-tail lexical fidelity for text-to-speech.** A fixed English specialist-word collection, occurrence-level scoring and original audio evidence—designed to report **beside WER**.
 
-[Get started](#quickstart) · [Measured evidence](#measured-evidence) · [Technical report](docs/TECHNICAL_REPORT.md) · [Model-card integration](docs/SUBMISSIONS.md)
+[Open the explorer](https://owenawsong.github.io/RareSpeech/) · [Get started](#quickstart) · [Measured evidence](#measured-evidence) · [Technical report](docs/TECHNICAL_REPORT.md) · [Model-card integration](docs/SUBMISSIONS.md)
 
 > **v0.2 · Candidate research toolkit.** Automatic target retention is an **ASR proxy**, not pronunciation accuracy. Expert pronunciation references and independent acoustic calibration remain pending. The software and measured recordings are available now; this is not a validated pronunciation leaderboard.
 
